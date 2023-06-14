@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="stylesheet" href="./roadMapStyle.css" />
     <title>지하철 혼잡도 알리미</title>
@@ -8,7 +8,11 @@
     <script src="./zoom.js"></script>
     <script src="./livetraininfo_api.js"></script>
     <script src="./trainID.js" defer></script>
-  </head>
+    <script src="./drag.js"></script>
+
+</head>
+
+
 
   <body>
     <div class="container">
@@ -69,12 +73,13 @@
               z-index: 1000;
               transform-origin: 0px 0px 0px;
               backface-visibility: hidden;
-              width: 1290.2px;
               transform: scale(1.4) scaleZ(1);
               transition-timing-function: ease;
               cursor: default;
+              overflow : auto;
             "
           >
+          
             <!-- 한강 선 -->
             <!-- <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 2440 1600" width="100%">
                                 <path
@@ -6614,7 +6619,6 @@
                 id="M0204"
                 uid="0204"
                 lineId="2 5"
-                style=""
               >
                 <rect
                   x="787"
