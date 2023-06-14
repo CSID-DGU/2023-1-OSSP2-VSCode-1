@@ -50,16 +50,6 @@ function train_loc_info(l_Number) {
             console.log(`최종 정보 수신 시간 : ${recptnDt}`);
             console.log(`지하철 정보: ${updnText} / ${trainNo} - ${statnNm} / ${statusText}`);
             console.log(`지하철 종착역: ${statnTnm}`);
-            /*switch (l_Number) {
-                case '2' :
-                    livecongestion_info(l_Number, trainNo)
-                    break;
-                case '3' :
-                    livecongestion_info(l_Number, trainNo)
-                    break;
-                default:
-                    break;
-            } */  //주석 처리한부분 -> 혼잡도 연계 시도
         }
       })
       .catch(error => {
