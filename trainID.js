@@ -48,7 +48,7 @@ function updateCongestion(congestionCar, congestionTrain, dom) {
       } else if (congestionTrain > 100 && congestionTrain <= 150) {
         congestionTrain = '혼잡';
       } else if (congestionTrain > 150) {
-        congestionTrain = '혼잡';
+        congestionTrain = '매우 혼잡';
       } else {
         congestionTrain = '쾌적';
       }

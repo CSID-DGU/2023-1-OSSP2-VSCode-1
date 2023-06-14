@@ -165,7 +165,7 @@
       } else if(avg >99 && 150 >= avg){
         return `혼잡(${avg})`;
       } else {
-        return `매우혼잡(${avg})`;
+        return `매우 혼잡(${avg})`;
       }
     }
     
