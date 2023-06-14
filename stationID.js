@@ -20,7 +20,7 @@
 //   }
 
 
-  $(document).ready(function() {
+ /* $(document).ready(function() {
     $('circle[class*="M"]').click(function() {
       if(subwayLineNumber == 2 || subwayLineNumber == 3) return false;
       var stationId = $(this).attr('stationid')
@@ -82,8 +82,39 @@
           break;
         }
       }
-    });
-
+    }); */
+    //두개 하나로 통합
+    $(document).ready(function() {
+      $('circle[class*="M"], g[class*="M"]').click(function() {
+        var stationId = $(this).attr('stationid');
+        var stationNM = $(this).attr('stationname');
+        var classes = $(this).attr('class').split(' ');
+        console.log(classes.length);
+        for (var i = 0; i < classes.length; i++) {
+          if (classes[i].startsWith('M') && classes[i].length === 5) {
+            console.log(stationId);
+            console.log(stationNM);
+            var day = new Date();
+            var weekday = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+            var dow = weekday[day.getDay()];
+            var hours = day.getHours();
+            var hh = ("0" + hours).slice(-2);
+            var mm = day.getMinutes();
+    
+            var jsonData = statisticcongestion_info(stationId, dow, hh);
+    
+            jsonData.then(function(result) {
+              appendStationInfo(result.contents.stat, hh, mm);
+            });
+    
+            $("#modal_title").text(stationNM + "역");
+            $("#station_status").text("텍스트");
+            $('#myModal').css('display', 'block');
+            break;
+          }
+        }
+      });
+      
     function appendStationInfo(result, hh, mm) {
         console.log(result);
         let down = { avg: 0, cnt: 0 };
@@ -141,6 +172,7 @@
   
     $('.close').click(function() {
       $('#myModal').css('display', 'none');
+      $("#station_status").empty();
     });
   });
 

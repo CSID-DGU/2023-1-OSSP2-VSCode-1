@@ -23,8 +23,8 @@ async function livecongestion_info(l_Number, trainNo) {
       method: 'GET',
       headers: { accept: 'application/json', appkey: 'WCfyvYzuLu6HjI65CWiMe4ApH0zgqk9Y5dUoFRet' }
   };
-    const CONG = window.location.hostname === 'localhost' ? '' : '/cong';
-    const url = `${CONG}/puzzle/congestion-train/rltm/trains/${l_Number}/${trainNo}`;
+  const CONG = window.location.hostname === 'localhost' ? '' : '/cong';
+  const url = `${CONG}/puzzle/congestion-train/rltm/trains/${l_Number}/${trainNo}`;
   
   try {
       const response = await fetch(url, options);

@@ -230,7 +230,9 @@ background-color: navy !important;
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 10001; /* Sit on top */
+  align-items: center; /* Always on center */
+  justify-content: center; /* Always on center */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
