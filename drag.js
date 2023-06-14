@@ -12,6 +12,9 @@ $(document).ready(function () {
         initialScrollY = $(window).scrollTop();
         isDragging = true;
 
+        // Change the cursor shape to "grabbing" during dragging
+        $('#trainLine').css('cursor', 'move');
+
         // Disable text selection during dragging
         $(document).on('selectstart dragstart', false);
     });
@@ -28,7 +31,11 @@ $(document).ready(function () {
     $(document).on('mouseup', function () {
         isDragging = false;
 
+        // Change the cursor shape back to default after dragging
+        $('#trainLine').css('cursor', 'auto');
+
         // Enable text selection after dragging
         $(document).off('selectstart dragstart');
     });
 });
+

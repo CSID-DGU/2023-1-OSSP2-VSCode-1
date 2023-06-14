@@ -1,12 +1,14 @@
 
 .logo {
-  display : flex;
-  justify-content : center;
-  align-items : center;
-  height: 80px;
-  width: 170px;
-  background-color: rgb(224, 222, 243);
-  font: small-caps bold 48px/1.5 sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 170px;
+    background-color: rgb(224, 222, 243);
+    font: small-caps bold 48px/1.5 sans-serif;
+    position: fixed;
+    z-index: 10000;
 }
 
 
@@ -16,20 +18,38 @@ top: 20%;
 right: 0%;
 position: fixed;
 }
-  .zoom button {
-      color: white;
-      font: bold 40px sans-serif;
-      border-radius: 90px;
-      margin: 1.25rem 1rem;
-      background-color: navy;
-      border: 6px solid navy;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-  }
+
+    .zoom button {
+        color: white;
+        font-size: 30px;
+        border-radius: 90px;
+        margin: 1.25rem 1rem;
+        background-color: navy;
+        border: 6px solid navy;
+        width: 50px;
+        height: 50px;
+        display: block;
+    }
+
+/* 2023 06 07 호선별 zoom값*/
+.zoomline {
+      z-index: 1000001;
+      top: 20%;
+      right: 0%;
+      position: fixed;
+      }
+      
+      .zoomline button {
+              color: white;
+              font-size: 30px;
+              border-radius: 90px;
+              margin: 1.25rem 1rem;
+              background-color: navy;
+              border: 6px solid navy;
+              width: 50px;
+              height: 50px;
+              display: block;
+          }
 
 .train-line {
 padding: 20px;
@@ -99,7 +119,7 @@ opacity: 1;
 
 /* 네비게이션 바 디자인 */
 .nav {
-height: fit-content;
+    height: fit-content;
 }
 
 .currentLine {
@@ -107,18 +127,21 @@ background-color: navy !important;
 }
 
 .nav ul {
-margin: 1.25rem 0;
-padding: 0;
-z-index: 10001;
-/* position: relative; */
+    margin: 1.25rem 0;
+    padding: 0;
+    top: 80px;
+    z-index: 9999;
+  /* position: relative;*/
+    position: fixed;
 }
 
-.nav ul li {
-margin: 2rem 0;
-display: block;
-list-style-type: none;
-color: black;
-}
+    .nav ul li {
+        margin: 2rem 0;
+        display: block;
+        list-style-type: none;
+        color: black;
+        
+    }
 
   .nav ul li a {
       color: white;
@@ -129,6 +152,7 @@ color: black;
       border-radius: 1rem 1rem;
       border: unset;
       font: small-caps bold 18px/1.5 sans-serif;
+
   }
 
 
@@ -136,6 +160,7 @@ color: black;
 .nav {
   width: 15%;
 }
+
 .section {
   width: 85%;
   display: flex;
@@ -150,9 +175,23 @@ color: black;
   display: inline-block;
 }
 
+.nav ul {
+  position: static;
+  top: initial;
+}
+
+.logo {
+  position: static;
+}
+
   .zoom {
       top: 10% !important;
       display: none;
+  }
+
+  .zoomline {
+    top: 10% !important;
+    display: none;
   }
 }
 
@@ -168,7 +207,21 @@ color: black;
   top: 25px;
 } */
 
+.nav ul {
+  position: static;
+  top: initial;
+}
+
+.logo {
+  position: static;
+}
+
 .zoom {
+  top: 10% !important;
+  display: none;
+}
+
+.zoomline {
   top: 10% !important;
   display: none;
 }
