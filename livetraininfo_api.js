@@ -1,6 +1,6 @@
 function train_loc_info(l_Number) {
-  const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
-  const url = `${PROXY}/test/test?number=${l_Number}`;
+  const PROXY = (window.location.hostname === '127.0.0.1') || (window.location.hostname === 'localhost') ? 'ndfu06u1e4.execute-api.ap-northeast-2.amazonaws.com' : '/proxy';
+  const url = `https://${PROXY}/test/test?number=${l_Number}`;
   let hour_h= new Date().getHours();
   if (l_Number == 2 || l_Number == 3) {
     fetch(url)
