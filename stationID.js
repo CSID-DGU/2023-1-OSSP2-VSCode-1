@@ -20,9 +20,9 @@
 //   }
 
 
-  /*$(document).ready(function() {
+ /* $(document).ready(function() {
     $('circle[class*="M"]').click(function() {
-      //if(subwayLineNumber == 2 || subwayLineNumber == 3) return false;
+      if(subwayLineNumber == 2 || subwayLineNumber == 3) return false;
       var stationId = $(this).attr('stationid')
       var stationNM = $(this).attr('stationname')
       var classes = $(this).attr('class').split(' ');
@@ -53,7 +53,7 @@
       }
     });
     $('g[class*="M"]').click(function() {
-      //if(subwayLineNumber == 2 || subwayLineNumber == 3) return false;
+      if(subwayLineNumber == 2 || subwayLineNumber == 3) return false;
       var stationId = $(this).attr('stationid')
       var stationNM = $(this).attr('stationname')
       var classes = $(this).attr('class').split(' ');
@@ -83,7 +83,7 @@
         }
       }
     }); */
-    
+    //두개 하나로 통합
     $(document).ready(function() {
       $('circle[class*="M"], g[class*="M"]').click(function() {
         var stationId = $(this).attr('stationid');
@@ -114,7 +114,7 @@
           }
         }
       });
-
+      
     function appendStationInfo(result, hh, mm) {
         console.log(result);
         let down = { avg: 0, cnt: 0 };
