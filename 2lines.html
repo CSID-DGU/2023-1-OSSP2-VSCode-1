@@ -2,12 +2,13 @@
 <html>
 
 <head>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
     <link rel="stylesheet" href="./roadMapStyle.css" />
     <title>지하철 혼잡도 알리미</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./zoom.js"></script>
     <script src="./livetraininfo_api.js"></script>
+    <script src="./livecongestion.js"></script>
     <script src="./trainID.js" defer></script>
 </head>
 
@@ -224,7 +225,7 @@
                         </g>
                         <circle class="accent A0203 A0320" cx="720" cy="345" r="3" id="A0203" stroke="black" stroke-width="1" fill="red"
                             uid="0203" lineId="2" style="display:none"></circle>
-                        <g class="marker M0204 L2 interchange M2536 L5" cx="790" cy="345" id="M0204" uid="0204" lineId="2 5" style="">
+                        <g class="marker M0204 L2 interchange M2536 L5" cx="790" cy="345" id="M0204" uid="0204" lineId="2 5" >
                             <rect x="787" y="337" width="6" height="11" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                             <circle cx="790" cy="345" r="1.5" stroke="#10a643" stroke-width="1" fill="#10a643"></circle>
                             <circle cx="790" cy="340" r="1.5" stroke="#a95094" stroke-width="1" fill="#a95094"></circle>

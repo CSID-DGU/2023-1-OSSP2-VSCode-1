@@ -2,13 +2,15 @@
 <html>
 
 <head>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
     <link rel="stylesheet" href="./roadMapStyle.css" />
     <title>지하철 혼잡도 알리미</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./zoom.js"></script>
     <script src="./livetraininfo_api.js"></script>
-    <script src="./trainID.js" defer></script>
+    <script src="./statisticcongestion.js"></script>
+    <!-- <script src="./trainID.js" defer></script> -->
+    <script src="./stationid.js" defer></script>
 </head>
 
 <body>
@@ -112,18 +114,18 @@
                     <g class="marker-group" transform-origin="50% 50% 0">
                         <!-- 1호선:소요산역부터 시작 -->
                         <circle class="marker M2811 L8" cx="1355" cy="500" r="3" id="M2811" stroke="#e74e6d"
-                            stroke-width="1" fill="#ffffff" uid="2811" lineId="8"></circle>
+                            stroke-width="1" fill="#ffffff" uid="2811" lineId="8" stationid="810"></circle>
                         <circle class="accent A2811" cx="1355" cy="500" r="3" id="A2811" stroke="black" stroke-width="1" fill="red"
                             uid="2811" lineId="8" style="display:none"></circle>
                         <circle class="marker M2813 L8" cx="1325" cy="569" r="3" id="M2813" stroke="#e74e6d"
-                            stroke-width="1" fill="#ffffff" uid="2813" lineId="8"></circle>
+                            stroke-width="1" fill="#ffffff" uid="2813" lineId="8" stationid="812"></circle>
                         <circle class="accent A2813" cx="1325" cy="569" r="3" id="A2813" stroke="black" stroke-width="1" fill="red"
                             uid="2813" lineId="8" style="display:none"></circle>
                         <circle class="marker M2814 L8" cx="1295" cy="597.5" r="3" id="M2814" stroke="#e74e6d"
-                            stroke-width="1" fill="#ffffff" uid="2814" lineId="8"></circle>
+                            stroke-width="1" fill="#ffffff" uid="2814" lineId="8" stationid="813"></circle>
                         <circle class="accent A2814" cx="1295" cy="597.5" r="3" id="A2814" stroke="black" stroke-width="1" fill="red"
                             uid="2814" lineId="8" style="display:none"></circle>
-                        <g class="marker M2816 L8 interchange M4133 L9" cx="1280" cy="660" id="M2816" uid="2816" lineId="8 9">
+                        <g class="marker M2816 L8 interchange M4133 L9" cx="1280" cy="660" id="M2816" uid="2816" lineId="8 9" stationid="815">
                             <rect x="1277" y="657" width="6" height="11" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                             <circle cx="1280" cy="660" r="1.5" stroke="#e74e6d" stroke-width="1" fill="#e74e6d"></circle>
                             <circle cx="1280" cy="665" r="1.5" stroke="#b58600" stroke-width="1" fill="#b58600"></circle>
@@ -131,18 +133,18 @@
                         <circle class="accent A2816 A4133" cx="1280" cy="660" r="3" id="A2816" stroke="black" stroke-width="1"
                             fill="red" uid="2816" lineId="8" style="display:none"></circle>
                         <circle class="marker M2817 L8" cx="1305" cy="685" r="3" id="M2817" stroke="#e74e6d"
-                            stroke-width="1" fill="#ffffff" uid="2817" lineId="8"></circle>
+                            stroke-width="1" fill="#ffffff" uid="2817" lineId="8" stationid="816"></circle>
                         <circle class="accent A2817" cx="1305" cy="685" r="3" id="A2817" stroke="black" stroke-width="1" fill="red"
                             uid="2817" lineId="8" style="display:none"></circle>
                         <circle class="marker M2819 L8" cx="1350" cy="730" r="3" id="M2819" stroke="#e74e6d"
-                            stroke-width="1" fill="#ffffff" uid="2819" lineId="8"></circle>
+                            stroke-width="1" fill="#ffffff" uid="2819" lineId="8" stationid="818"></circle>
                         <circle class="accent A2819" cx="1350" cy="730" r="3" id="A2819" stroke="black" stroke-width="1" fill="red"
                             uid="2819" lineId="8" style="display:none"></circle>
                         <circle class="marker M2820 L8" cx="1370" cy="750" r="3" id="M2820" stroke="#e74e6d"
-                            stroke-width="1" fill="#ffffff" uid="2820" lineId="8"></circle>
+                            stroke-width="1" fill="#ffffff" uid="2820" lineId="8" stationid="819"></circle>
                         <circle class="accent A2820" cx="1370" cy="750" r="3" id="A2820" stroke="black" stroke-width="1" fill="red"
                             uid="2820" lineId="8" style="display:none"></circle>
-                        <g class="marker M2821 L8 interchange M1031 LB" cx="1385" cy="765" id="M1031" uid="1031" lineId="8 B">
+                        <g class="marker M2821 L8 interchange M1031 LB" cx="1385" cy="765" id="M1031" uid="1031" lineId="8 B" stationid="820">
                             <rect x="1377" y="762" width="11" height="6" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                             <circle cx="1385" cy="765" r="1.5" stroke="#e74e6d" stroke-width="1" fill="#e74e6d"></circle>
                             <circle cx="1380" cy="765" r="1.5" stroke="#a69500" stroke-width="1" fill="#a69500"></circle>
@@ -150,30 +152,30 @@
                         <circle class="accent A2821 A1031" cx="1385" cy="765" r="3" id="A1031" stroke="black" stroke-width="1"
                             fill="red" uid="1031" lineId="8" style="display:none"></circle>
                         <circle class="marker M2828 L8" cx="1410" cy="790" r="3" id="M2828" stroke="#e74e6d"
-                            stroke-width="1" fill="#ffffff" uid="2828" lineId="8"></circle>
+                            stroke-width="1" fill="#ffffff" uid="2828" lineId="8" stationid="821"></circle>
                         <circle class="accent A2828" cx="1410" cy="790" r="3" id="A2828" stroke="black" stroke-width="1" fill="red"
                             uid="2828" lineId="8" style="display:none"></circle>
                         <circle class="marker M2822 L8" cx="1425" cy="810" r="3" id="M2822" stroke="#e74e6d"
-                            stroke-width="1" fill="#ffffff" uid="2822" lineId="8"></circle>
+                            stroke-width="1" fill="#ffffff" uid="2822" lineId="8" stationid="822"></circle>
                         <circle class="accent A2822" cx="1425" cy="810" r="3" id="A2822" stroke="black" stroke-width="1" fill="red"
                             uid="2822" lineId="8" style="display:none"></circle>
                         <circle class="marker M2823 L8" cx="1425" cy="840" r="3" id="M2823" stroke="#e74e6d"
-                            stroke-width="1" fill="#ffffff" uid="2823" lineId="8"></circle>
+                            stroke-width="1" fill="#ffffff" uid="2823" lineId="8" stationid="823"></circle>
                         <circle class="accent A2823" cx="1425" cy="840" r="3" id="A2823" stroke="black" stroke-width="1" fill="red"
                             uid="2823" lineId="8" style="display:none"></circle>
                         <circle class="marker M2824 L8" cx="1392.5" cy="845" r="3" id="M2824" stroke="#e74e6d"
-                            stroke-width="1" fill="#ffffff" uid="2824" lineId="8"></circle>
+                            stroke-width="1" fill="#ffffff" uid="2824" lineId="8" stationid="824"></circle>
                         <circle class="accent A2824" cx="1392.5" cy="845" r="3" id="A2824" stroke="black" stroke-width="1" fill="red"
                             uid="2824" lineId="8" style="display:none"></circle>
                         <circle class="marker M2825 L8" cx="1355" cy="845" r="3" id="M2825" stroke="#e74e6d"
-                            stroke-width="1" fill="#ffffff" uid="2825" lineId="8"></circle>
+                            stroke-width="1" fill="#ffffff" uid="2825" lineId="8" stationid="825"></circle>
                         <circle class="accent A2825" cx="1355" cy="845" r="3" id="A2825" stroke="black" stroke-width="1" fill="red"
                             uid="2825" lineId="8" style="display:none"></circle>
                         <circle class="marker M2826 L8" cx="1315" cy="835" r="3" id="M2826" stroke="#e74e6d"
-                            stroke-width="1" fill="#ffffff" uid="2826" lineId="8"></circle>
+                            stroke-width="1" fill="#ffffff" uid="2826" lineId="8" stationid="826"></circle>
                         <circle class="accent A2826" cx="1315" cy="835" r="3" id="A2826" stroke="black" stroke-width="1" fill="red"
                             uid="2826" lineId="8" style="display:none"></circle>
-                        <g class="marker M2827 L8 interchange M1853 LB" cx="1295" cy="805" id="M1853" uid="1853" lineId="8 B">
+                        <g class="marker M2827 L8 interchange M1853 LB" cx="1295" cy="805" id="M1853" uid="1853" lineId="8 B" stationid="827">
                             <rect x="1292" y="802" width="11" height="6" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                             <circle cx="1295" cy="805" r="1.5" stroke="#e74e6d" stroke-width="1" fill="#e74e6d"></circle>
                             <circle cx="1300" cy="805" r="1.5" stroke="#a69500" stroke-width="1" fill="#a69500"></circle>
@@ -181,17 +183,17 @@
                         <circle class="accent A2827 A1853" cx="1295" cy="805" r="3" id="A1853" stroke="black" stroke-width="1"
                             fill="red" uid="1853" lineId="8" style="display:none"></circle>
                     </g>
-                    <g class="marker M0340 L3 interchange M2818 L8" cx="1332.5" cy="717.5" id="M2818" uid="2818" lineId="3 8">
+                    <g class="marker M0340 L3 interchange M2818 L8" cx="1332.5" cy="717.5" id="M2818" uid="2818" lineId="3 8" stationid="817">
                         <rect x="1329.5" y="709.5" width="6" height="11" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                         <circle cx="1332.5" cy="717.5" r="1.5" stroke="#de6d00" stroke-width="1" fill="#de6d00"></circle>
                         <circle cx="1332.5" cy="712.5" r="1.5" stroke="#e74e6d" stroke-width="1" fill="#e74e6d"></circle>
                     </g>
-                    <g class="marker M0216 L2 interchange M2815 L8" cx="1255" cy="635" id="M0216" uid="0216" lineId="2 8">
+                    <g class="marker M0216 L2 interchange M2815 L8" cx="1255" cy="635" id="M0216" uid="0216" lineId="2 8" stationid="814">
                         <rect x="1252" y="632" width="6" height="11" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                         <circle cx="1255" cy="640" r="1.5" stroke="#10a643" stroke-width="1" fill="#10a643"></circle>
                         <circle cx="1255" cy="635" r="1.5" stroke="#e74e6d" stroke-width="1" fill="#e74e6d"></circle>
                     </g>
-                    <g class="marker M2548 L5 interchange M2812 L8" cx="1355" cy="540" id="M2548" uid="2548" lineId="5 8">
+                    <g class="marker M2548 L5 interchange M2812 L8" cx="1355" cy="540" id="M2548" uid="2548" lineId="5 8" stationid="811">
                         <rect x="1352" y="537" width="11" height="6" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                         <circle cx="1360" cy="540" r="1.5" stroke="#a95094" stroke-width="1" fill="#a95094"></circle>
                         <circle cx="1355" cy="540" r="1.5" stroke="#e74e6d" stroke-width="1" fill="#e74e6d"></circle>
