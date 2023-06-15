@@ -2,13 +2,15 @@
 <html>
 <head>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <link rel="stylesheet" href="./roadMapStyle.css" />
+    <link rel="stylesheet" href="css/lines.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/zoom.css" />
     <title>지하철 혼잡도 알리미</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./zoom.js"></script>
-    <script src="./livetraininfo_api.js"></script>
-    <script src="./trainID.js" defer></script>
-    <script src="./drag.js"></script>
+    <script src="js/zoom.js"></script>
+    <script src="api/livetraininfo_api.js"></script>
+    <script src="js/drag.js"></script>
 
 </head>
 
@@ -26,31 +28,31 @@
         <div class="nav">
           <ul>
             <li>
-              <a href="1lines.html">1호선</a>
+              <a href="lines/1lines.html">1호선</a>
             </li>
             <li>
-              <a href="2lines.html">2호선</a>
+              <a href="lines/2lines.html">2호선</a>
             </li>
             <li>
-              <a href="3lines.html">3호선</a>
+              <a href="lines/3lines.html">3호선</a>
             </li>
             <li>
-              <a href="4lines.html">4호선</a>
+              <a href="lines/4lines.html">4호선</a>
             </li>
             <li>
-              <a href="5lines.html">5호선</a>
+              <a href="lines/5lines.html">5호선</a>
             </li>
             <li>
-              <a href="6lines.html">6호선</a>
+              <a href="lines/6lines.html">6호선</a>
             </li>
             <li>
-              <a href="7lines.html">7호선</a>
+              <a href="lines/7lines.html">7호선</a>
             </li>
             <li>
-              <a href="8lines.html">8호선</a>
+              <a href="lines/8lines.html">8호선</a>
             </li>
             <li>
-              <a href="9lines.html">9호선</a>
+              <a href="lines/9lines.html">9호선</a>
             </li>
           </ul>
         </div>
@@ -80,12 +82,6 @@
             "
           >
           
-            <!-- 한강 선 -->
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 2440 1600" width="100%">
-                                <path
-                                  d="M 65 305 H 370 V 430 H 500 L 850 780 H 940 V 888 H 1480 L 1560 808 H 1830 L 1910 888 H 2010 L 2090 808 V 620 H 2300 M 940 860 H 850 L 730 740 H 800"
-                                  fill="none" stroke="#d3effb" stroke-width="23" stroke-linejoin="round" stroke-linecap="round"></path>
-                              </svg> -->
             <!-- 라인들 선 -->
             <g
               id="line-1"
@@ -2911,6 +2907,13 @@
                 </text>
               </g>
             </g>
+
+
+
+
+
+
+
             <!-- 역(동그라미)나타나는 곳 -->
             <g class="marker-group" transform-origin="50% 50% 0">
               <!-- 1호선:소요산역부터 시작 -->
@@ -15209,6 +15212,10 @@
               ></circle>
             </g>
 
+
+
+
+
             <!-- 역이름 나타나는 곳 -->
             <g
               class="label-group"
@@ -20003,25 +20010,8 @@
                 <tspan x="1470" dx="5" dy="12" font-size="9px">보훈병원</tspan>
               </text>
             </g>
-            <!-- 목적지 없어도 될듯 -->
-            <!-- <defs>
-                                                        <g id="def-marker-start">
-                                                          <path stroke="#005124" fill="#00B050" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"
-                                                            d="m 0 0 l -7.5 -7.5 a 10 10 0 1 1 15 0 l -7.5 7.5 z"></path><text dy="-13" lengthAdjust="spacingAndGlyphs"
-                                                            text-anchor="middle" style="fill:white; stroke:none; stroke-width:0.5; font-size:7px;">출발</text>
-                                                        </g>
-                                                        <g id="def-marker-stop">
-                                                          <path stroke="#BD6402" fill="#F38103" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"
-                                                            d="m 0 0 l -7.5 -7.5 a 10 10 0 1 1 15 0 l -7.5 7.5 z"></path><text dy="-13" lengthAdjust="spacingAndGlyphs"
-                                                            text-anchor="middle" style="fill:white; stroke:none; stroke-width:0.5; font-size:7px;">경유</text>
-                                                        </g>
-                                                        <g id="def-marker-end">
-                                                          <path stroke="#000086" fill="#0000FF" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"
-                                                            d="m 0 0 l -7.5 -7.5 a 10 10 0 1 1 15 0 l -7.5 7.5 z"></path><text dy="-13" lengthAdjust="spacingAndGlyphs"
-                                                            text-anchor="middle" style="fill:white; stroke:none; stroke-width:0.5; font-size:7px;">도착</text>
-                                                        </g>
-                                                      </defs> -->
-            <!-- 여기까지 없어도 될듯:아래3줄도 없어도 되는데 지우면 오류남 -->
+
+            
             <use
               id="marker-start"
               class="routeMarker"

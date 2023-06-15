@@ -15,12 +15,12 @@ function updateCongestion(congestionCar, congestionTrain, dom) {
 
   var carTable = $("#carTable");
   var trainTable = $("#trainTable");
-  carTable.empty(); // Clears the table if it was previously filled
+  carTable.empty(); // 테이블 초기화
 
   var row = $("<tr>");
-  var counter = 1; // number counting
+  var counter = 1; // 카운트
   $.each(congestionCar, function(index, value) {
-      var color = "#C5E0B4"; // default color
+      var color = "#C5E0B4"; // 색 초기화
       if (value > 34 && value <= 99) {
           color = "#FFE699";
       } else if (value > 99 && value <= 150) {
@@ -28,7 +28,7 @@ function updateCongestion(congestionCar, congestionTrain, dom) {
       } else if (value > 150) {
           color = "#FF0000";
       }
-      //number display in center
+      //숫자를 중앙에 배치
       var numberSpan = $("<span>").text(counter).css({"display": "flex","align-items": "center","justify-content":"center"});
       row.append($("<td>").css({"background-color": color, "width": "30px", "height": "30px"}).append(numberSpan));
       counter++;
@@ -39,7 +39,7 @@ function updateCongestion(congestionCar, congestionTrain, dom) {
       "margin-right": "auto",
       "display": "table",
       "table-layout": "fixed",
-      "width": "90%", // adjust as needed
+      "width": "90%"
   });
 
   var trainRow = trainTable.find("tr").first();
@@ -48,7 +48,7 @@ function updateCongestion(congestionCar, congestionTrain, dom) {
       } else if (congestionTrain > 100 && congestionTrain <= 150) {
         congestionTrain = '혼잡';
       } else if (congestionTrain > 150) {
-        congestionTrain = '매우 혼잡';
+        congestionTrain = '혼잡';
       } else {
         congestionTrain = '쾌적';
       }

@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
-    <link rel="stylesheet" href="./roadMapStyle.css" />
+    <link rel="stylesheet" href="../css/lines.css" />
+    <link rel="stylesheet" href="../css/modal.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/zoom.css" />
     <title>지하철 혼잡도 알리미</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./zoomline.js"></script>
-    <script src="./livetraininfo_api.js"></script>
-    <script src="./statisticcongestion.js"></script>
-    <!-- <script src="./trainID.js" defer></script> -->
-    <script src="./stationid.js" defer></script>
-    <script src="./drag.js"></script>
+    <script src="../js/zoomline.js"></script>
+    <script src="../api/livetraininfo_api.js"></script>
+    <script src="../api/statisticcongestion.js"></script>
+    <script src="../api/stationid.js" defer></script>
+    <script src="../js/drag.js"></script>
   </head>
 
   <body>
+    <!--9호선 정보-->
     <script>
       const subwayLineNumber = 9;
       train_loc_info(subwayLineNumber);
@@ -32,7 +34,7 @@
     <div class="container">
       <!-- 로고 -->
       <div>
-        <span class="logo" onclick="location.href='index.html'">VSCode</span>
+        <span class="logo" onclick="location.href='../index.html'">VSCode</span>
       </div>
 
       <div class="section">
@@ -2086,7 +2088,7 @@
               </text>
             </g>
 
-            <!-- 여기까지 없어도 될듯:아래3줄도 없어도 되는데 지우면 오류남 -->
+            
             <use
               id="marker-start"
               class="routeMarker"

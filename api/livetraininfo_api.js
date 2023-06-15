@@ -30,25 +30,22 @@ function train_loc_info(l_Number) {
                   console.log(`y축: ${y}`);
 
                 switch (statUpdns[i]) {
+                  // 상행/내선이라면
                   case '0':
-                    const upimageUrl = './subway_icon_up.svg';
+                    const upimageUrl = '../svg/subway_icon_up.svg';
                     console.log("상행/내선");
                     addImageToSVG(svgElement, x, y, upimageUrl, stations[i]);
                     break;
+                  // 하행/외선이라면
                   case '1':
-                    const dnimageUrl = './subway_icon_down.svg';
+                    const dnimageUrl = '../svg/subway_icon_down.svg';
                     console.log("하행/외선");
                     addImageToSVG(svgElement, x, y, dnimageUrl, stations[i]);
                     break;
                   default:
                     updnText = '알 수 없음';
                 }
-  
-                // SVG 이미지 URL
-                //const imageUrl = './subway_icon.svg';
-  
-                // SVG에 이미지를 추가
-                // addImageToSVG(svgElement, x, y, imageUrl);
+
   
             } else if (gElement) {
               // circle 요소의 위치를 얻음
@@ -59,47 +56,22 @@ function train_loc_info(l_Number) {
               
                 switch (statUpdns[i]) {
                   case '0':
-                    const upimageUrl = './subway_icon_up.svg';
+                    const upimageUrl = '../svg/subway_icon_up.svg';
                     console.log("상행/내선");
                     addImageToSVG(svgElement, x, y, upimageUrl, stations[i]);
                     break;
                   case '1':
-                    const dnimageUrl = './subway_icon_down.svg';
+                    const dnimageUrl = '../svg/subway_icon_down.svg';
                     console.log("하행/외선");
                     addImageToSVG(svgElement, x, y, dnimageUrl, stations[i]);
                     break;
                   default:
                     updnText = '알 수 없음';
                 }
-  
-                // SVG 이미지 URL
-                //const imageUrl = './subway_icon.svg';
-  
-                // SVG에 이미지를 추가
-                // addImageToSVG(svgElement, x, y, imageUrl);
-                
-          }
-          else {
-            console.log("오답이다 연금술사!");
           }
         }
-          /*// 각 station ID에 대해
-          for (let i = 0; i < statnNms.length; i++) {
-            // 해당 station ID를 가진 circle 요소를 찾음
-            let circleElement = document.querySelector(`circle[stationname="${statnNms[i].textContent}"]`);
-            if (circleElement) {
-                // circle 요소의 위치를 얻음
-                let x = circleElement.getAttribute("cx");
-                let y = circleElement.getAttribute("cy");
-        
-                // SVG 이미지 URL
-                let imageUrl = './subway_icon.svg';
-        
-                // SVG에 이미지를 추가
-                addImageToSVG(svgElement, x, y, imageUrl);
-                console.log('x축: ${x}','y축: ${y}');
-            }
-        }*/
+
+        // 역 정보 불러오기
           for (let i = 0; i < stations.length; i++) {
             const station = stations[i];
             const recptnDt = station.recptnDt;
@@ -174,12 +146,12 @@ function train_loc_info(l_Number) {
   
                 switch (statUpdns[i]) {
                   case '0':
-                    const upimageUrl = './subway_icon_up.svg';
+                    const upimageUrl = '../svg/subway_icon_up.svg';
                     console.log("상행/내선");
                     addImageToSVG(svgElement, x, y, upimageUrl, stations[i]);
                     break;
                   case '1':
-                    const dnimageUrl = './subway_icon_down.svg';
+                    const dnimageUrl = '../svg/subway_icon_down.svg';
                     console.log("하행/외선");
                     addImageToSVG(svgElement, x, y, dnimageUrl, stations[i]);
                     break;
@@ -187,11 +159,6 @@ function train_loc_info(l_Number) {
                     updnText = '알 수 없음';
                 }
   
-                // SVG 이미지 URL
-                //const imageUrl = './subway_icon.svg';
-  
-                // SVG에 이미지를 추가
-                // addImageToSVG(svgElement, x, y, imageUrl);
   
             } else if (gElement) {
               // circle 요소의 위치를 얻음
@@ -202,12 +169,12 @@ function train_loc_info(l_Number) {
               
                 switch (statUpdns[i]) {
                   case '0':
-                    const upimageUrl = './subway_icon_up.svg';
+                    const upimageUrl = '../svg/subway_icon_up.svg';
                     console.log("상행/내선");
                     addImageToSVG(svgElement, x, y, upimageUrl, stations[i]);
                     break;
                   case '1':
-                    const dnimageUrl = './subway_icon_down.svg';
+                    const dnimageUrl = '../svg/subway_icon_down.svg';
                     console.log("하행/외선");
                     addImageToSVG(svgElement, x, y, dnimageUrl, stations[i]);
                     break;
@@ -215,34 +182,9 @@ function train_loc_info(l_Number) {
                     updnText = '알 수 없음';
                 }
   
-                // SVG 이미지 URL
-                //const imageUrl = './subway_icon.svg';
-  
-                // SVG에 이미지를 추가
-                // addImageToSVG(svgElement, x, y, imageUrl);
                 
           }
-          else {
-            console.log("오답이다 연금술사!");
-          }
         }
-          /*// 각 station ID에 대해
-          for (let i = 0; i < statnNms.length; i++) {
-              // 해당 station ID를 가진 circle 요소를 찾음
-              let circleElement = document.querySelector(`circle[stationname="${statnNms[i].textContent}"]`);
-              if (circleElement) {
-                  // circle 요소의 위치를 얻음
-                  let x = circleElement.getAttribute("cx");
-                  let y = circleElement.getAttribute("cy");
-          
-                  // SVG 이미지 URL
-                  let imageUrl = './subway_icon.svg';
-          
-                  // SVG에 이미지를 추가
-                  addImageToSVG(svgElement, x, y, imageUrl);
-                  console.log('x축: ${x}','y축: ${y}');
-              }
-          }*/
   
           for (let i = 0; i < stations.length; i++) {
             const station = stations[i];
@@ -283,7 +225,6 @@ function train_loc_info(l_Number) {
             console.log(`최종 정보 수신 시간: ${recptnDt}`);
             console.log(`지하철 정보: ${updnText} / ${trainNo} - ${statnNm} / ${statusText}`);
             console.log(`지하철 종착역: ${statnTnm}`);
-            //livecongestion_info(l_Number, trainNo);
           }
         }
       })
@@ -307,12 +248,3 @@ function addImageToSVG(svgElement, x, y, imageUrl, stations) {
   image.setAttributeNS(null, 'statnNm', stations.statnNm);
   svgElement.appendChild(image);
 }
-/*function addImageToSVG(svgElement, x, y, imageUrl) {
-  let image = document.createElementNS("http://www.w3.org/2000/svg", "image");
-  image.setAttributeNS(null, 'height', '50');
-  image.setAttributeNS(null, 'width', '50');
-  image.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', imageUrl);
-  image.setAttributeNS(null, 'x', x);
-  image.setAttributeNS(null, 'y', y);
-  svgElement.appendChild(image);
-}*/

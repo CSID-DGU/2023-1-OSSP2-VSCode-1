@@ -12,10 +12,10 @@ $(document).ready(function () {
         initialScrollY = $(window).scrollTop();
         isDragging = true;
 
-        // Change the cursor shape to "grabbing" during dragging
+        // 마우스를 클릭했을 때 커서 모양을 바꾸기
         $('#trainLine').css('cursor', 'move');
 
-        // Disable text selection during dragging
+        // 드래그 중에 다른 요소를 선택 못하게 하기
         $(document).on('selectstart dragstart', false);
     });
 
@@ -31,10 +31,8 @@ $(document).ready(function () {
     $(document).on('mouseup', function () {
         isDragging = false;
 
-        // Change the cursor shape back to default after dragging
         $('#trainLine').css('cursor', 'auto');
 
-        // Enable text selection after dragging
         $(document).off('selectstart dragstart');
     });
 });
