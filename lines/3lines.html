@@ -8,7 +8,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./zoomline.js"></script>
     <script src="./livecongestion.js"></script>
+    <script src="./statisticcongestion.js"></script>
     <script src="./livetraininfo_api.js"></script>
+    <script src="./stationid.js" defer></script>
     <script src="./trainID.js" defer></script>
     <script src="./drag.js"></script>
 </head>
@@ -35,6 +37,7 @@
               </td>
             </tr>
             </table>
+            <p id="station_status"></p>
           </div>
         </div>
       </div>
@@ -163,26 +166,26 @@
                     <g class="marker-group" transform-origin="50% 50% 0">
                         <!-- 1호선:소요산역부터 시작 -->
                         <circle class="marker M1958 L3" cx="80" cy="175" r="3" id="M1958" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="1958" lineId="3" stationname="대화"></circle>
+                            stroke-width="1" fill="#ffffff" uid="1958" lineId="3" stationid="309" stationname="대화"></circle>
                         <circle class="accent A1958" cx="80" cy="175" r="3" id="A1958" stroke="black" stroke-width="1" fill="red"
                             uid="1958" lineId="3" style="display:none"></circle>
                         <circle class="marker M1957 L3" cx="120" cy="175" r="3" id="M1957" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="1957" lineId="3" stationname="주엽"></circle>
+                            stroke-width="1" fill="#ffffff" uid="1957" lineId="3" stationid="310" stationname="주엽"></circle>
                         <circle class="accent A1957" cx="120" cy="175" r="3" id="A1957" stroke="black" stroke-width="1" fill="red"
                             uid="1957" lineId="3" style="display:none"></circle>
                         <circle class="marker M1956 L3" cx="157.5" cy="175" r="3" id="M1956" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="1956" lineId="3" stationname="정발산"></circle>
+                            stroke-width="1" fill="#ffffff" uid="1956" lineId="3" stationid="311" stationname="정발산"></circle>
                         <circle class="accent A1956" cx="157.5" cy="175" r="3" id="A1956" stroke="black" stroke-width="1" fill="red"
                             uid="1956" lineId="3" style="display:none"></circle>
                         <circle class="marker M1955 L3" cx="194.5" cy="175" r="3" id="M1955" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="1955" lineId="3" stationname="마두"></circle>
+                            stroke-width="1" fill="#ffffff" uid="1955" lineId="3" stationid="312" stationname="마두"></circle>
                         <circle class="accent A1955" cx="194.5" cy="175" r="3" id="A1955" stroke="black" stroke-width="1" fill="red"
                             uid="1955" lineId="3" style="display:none"></circle>
                         <circle class="marker M1954 L3" cx="230" cy="175" r="3" id="M1954" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="1954" lineId="3" stationname="백석"></circle>
+                            stroke-width="1" fill="#ffffff" uid="1954" lineId="3" stationid="313" stationname="백석"></circle>
                         <circle class="accent A1954" cx="230" cy="175" r="3" id="A1954" stroke="black" stroke-width="1" fill="red"
                             uid="1954" lineId="3" style="display:none"></circle>
-                        <g class="marker M1953 L3 interchange M0300 LK" cx="265" cy="175" id="M1953" uid="1953" lineId="3 K" stationname="대곡">
+                        <g class="marker M1953 L3 interchange M0300 LK" cx="265" cy="175" id="M1953" uid="1953" lineId="3 K" stationid="314" stationname="대곡">
                             <rect x="262" y="172" width="6" height="11" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                             <circle cx="265" cy="175" r="1.5" stroke="#de6d00" stroke-width="1" fill="#de6d00"></circle>
                             <circle cx="265" cy="180" r="1.5" stroke="#5f9c82" stroke-width="1" fill="#5f9c82"></circle>
@@ -190,37 +193,37 @@
                         <circle class="accent A1953 A0300" cx="265" cy="175" r="3" id="A1953" stroke="black" stroke-width="1" fill="red"
                             uid="1953" lineId="3" style="display:none"></circle>
                         <circle class="marker M1952 L3" cx="287.5" cy="175" r="3" id="M1952" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="1952" lineId="3" stationname="화정"></circle>
+                            stroke-width="1" fill="#ffffff" uid="1952" lineId="3" stationid="315" stationname="화정"></circle>
                         <circle class="accent A1952" cx="287.5" cy="175" r="3" id="A1952" stroke="black" stroke-width="1" fill="red"
                             uid="1952" lineId="3" style="display:none"></circle>
                         <circle class="marker M1951 L3" cx="315" cy="175" r="3" id="M1951" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="1951" lineId="3" stationname="원당"></circle>
+                            stroke-width="1" fill="#ffffff" uid="1951" lineId="3" stationid="316" stationname="원당"></circle>
                         <circle class="accent A1951" cx="315" cy="175" r="3" id="A1951" stroke="black" stroke-width="1" fill="red"
                             uid="1951" lineId="3" style="display:none"></circle>
                         <circle class="marker M1948 L3" cx="340" cy="175" r="3" id="M1948" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="1948" lineId="3" stationname="원흥"></circle>
+                            stroke-width="1" fill="#ffffff" uid="1948" lineId="3" stationid="317" stationname="원흥"></circle>
                         <circle class="accent A1948" cx="340" cy="175" r="3" id="A1948" stroke="black" stroke-width="1" fill="red"
                             uid="1948" lineId="3" style="display:none"></circle>
                         <circle class="marker M1950 L3" cx="365" cy="175" r="3" id="M1950" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="1950" lineId="3" stationname="삼송"></circle>
+                            stroke-width="1" fill="#ffffff" uid="1950" lineId="3" stationid="318" stationname="삼송"></circle>
                         <circle class="accent A1950" cx="365" cy="175" r="3" id="A1950" stroke="black" stroke-width="1" fill="red"
                             uid="1950" lineId="3" style="display:none"></circle>
                         <circle class="marker M0309 L3" cx="391" cy="175" r="3" id="M0309" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="0309" lineId="3" stationname="지축"></circle>
+                            stroke-width="1" fill="#ffffff" uid="0309" lineId="3" stationid="319" stationname="지축"></circle>
                         <circle class="accent A0309" cx="391" cy="175" r="3" id="A0309" stroke="black" stroke-width="1" fill="red"
                             uid="0309" lineId="3" style="display:none"></circle>
                         <circle class="marker M0310 L3" cx="419" cy="175" r="3" id="M0310" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="0310" lineId="3" stationname="구파발"></circle>
+                            stroke-width="1" fill="#ffffff" uid="0310" lineId="3" stationid="320" stationname="구파발"></circle>
                         <circle class="accent A0310" cx="419" cy="175" r="3" id="A0310" stroke="black" stroke-width="1" fill="red"
                             uid="0310" lineId="3" style="display:none"></circle>
-                        <g class="marker M0311 L3 interchange M2615 L6" cx="440" cy="175" id="M0311" uid="0311" lineId="3 6" stationname="연신내">
+                        <g class="marker M0311 L3 interchange M2615 L6" cx="440" cy="175" id="M0311" uid="0311" lineId="3 6" stationid="321" stationname="연신내">
                             <rect x="437" y="172" width="11" height="6" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                             <circle cx="445" cy="175" r="1.5" stroke="#de6d00" stroke-width="1" fill="#de6d00"></circle>
                             <circle cx="440" cy="175" r="1.5" stroke="#d08d1a" stroke-width="1" fill="#d08d1a"></circle>
                         </g>
                         <circle class="accent A0311 A2615" cx="440" cy="175" r="3" id="A0311" stroke="black" stroke-width="1" fill="red"
                             uid="0311" lineId="3" style="display:none"></circle>
-                        <g class="marker M0312 L3 interchange M2613 L6" cx="500" cy="175" id="M0312" uid="0312" lineId="3 6" stationname="불광">
+                        <g class="marker M0312 L3 interchange M2613 L6" cx="500" cy="175" id="M0312" uid="0312" lineId="3 6" stationid="322" stationname="불광">
                             <rect x="492" y="172" width="11" height="6" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                             <circle cx="495" cy="175" r="1.5" stroke="#de6d00" stroke-width="1" fill="#de6d00"></circle>
                             <circle cx="500" cy="175" r="1.5" stroke="#d08d1a" stroke-width="1" fill="#d08d1a"></circle>
@@ -228,41 +231,41 @@
                         <circle class="accent A0312 A2613" cx="500" cy="175" r="3" id="A0312" stroke="black" stroke-width="1" fill="red"
                             uid="0312" lineId="3" style="display:none"></circle>
                         <circle class="marker M0313 L3" cx="542.5" cy="175" r="3" id="M0313" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="0313" lineId="3" stationname="녹번"></circle>
+                            stroke-width="1" fill="#ffffff" uid="0313" lineId="3" stationid="323" stationname="녹번"></circle>
                         <circle class="accent A0313" cx="542.5" cy="175" r="3" id="A0313" stroke="black" stroke-width="1" fill="red"
                             uid="0313" lineId="3" style="display:none"></circle>
                         <circle class="marker M0314 L3" cx="575" cy="175" r="3" id="M0314" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="0314" lineId="3" stationname="홍제"></circle>
+                            stroke-width="1" fill="#ffffff" uid="0314" lineId="3" stationid="324" stationname="홍제"></circle>
                         <circle class="accent A0314" cx="575" cy="175" r="3" id="A0314" stroke="black" stroke-width="1" fill="red"
                             uid="0314" lineId="3" style="display:none"></circle>
                         <circle class="marker M0315 L3" cx="605" cy="175" r="3" id="M0315" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="0315" lineId="3" stationname="무악재"></circle>
+                            stroke-width="1" fill="#ffffff" uid="0315" lineId="3" stationid="325" stationname="무악재"></circle>
                         <circle class="accent A0315" cx="605" cy="175" r="3" id="A0315" stroke="black" stroke-width="1" fill="red"
                             uid="0315" lineId="3" style="display:none"></circle>
                         <circle class="marker M0316 L3" cx="645" cy="200" r="3" id="M0316" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="0316" lineId="3" stationname="독립문"></circle>
+                            stroke-width="1" fill="#ffffff" uid="0316" lineId="3" stationid="326" stationname="독립문"></circle>
                         <circle class="accent A0316" cx="645" cy="200" r="3" id="A0316" stroke="black" stroke-width="1" fill="red"
                             uid="0316" lineId="3" style="display:none"></circle>
                         <circle class="marker M0317 L3" cx="670" cy="225" r="3" id="M0317" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="0317" lineId="3" stationname="경복궁"></circle>
+                            stroke-width="1" fill="#ffffff" uid="0317" lineId="3" stationid="327" stationname="경복궁"></circle>
                         <circle class="accent A0317" cx="670" cy="225" r="3" id="A0317" stroke="black" stroke-width="1" fill="red"
                             uid="0317" lineId="3" style="display:none"></circle>
                         <circle class="marker M0318 L3" cx="690" cy="245" r="3" id="M0318" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="0318" lineId="3" stationname="안국"></circle>
+                            stroke-width="1" fill="#ffffff" uid="0318" lineId="3" stationid="328" stationname="안국"></circle>
                         <circle class="accent A0318" cx="690" cy="245" r="3" id="A0318" stroke="black" stroke-width="1" fill="red"
                             uid="0318" lineId="3" style="display:none"></circle>
-                            <g class="marker M0203 L2 interchange M0320 L3" cx="720" cy="345" id="M0203" uid="0203" lineId="2 3" stationname="종로3가">
+                            <g class="marker M0203 L2 interchange M0320 L3" cx="720" cy="345" id="M0203" uid="0203" lineId="2 3" stationid="329" stationname="종로3가">
                                 <rect x="717" y="342" width="11" height="6" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                                 <circle cx="725" cy="345" r="1.5" stroke="#10a643" stroke-width="1" fill="#10a643"></circle>
                                 <circle cx="720" cy="345" r="1.5" stroke="#de6d00" stroke-width="1" fill="#de6d00"></circle>
                             </g>
-                            <g class="marker M0153 L1 interchange M0319 L3 M2535 L5" cx="715" cy="275" id="M0153" uid="0153" lineId="1 3 5" stationname="을지로3가">
+                            <g class="marker M0153 L1 interchange M0319 L3 M2535 L5" cx="715" cy="275" id="M0153" uid="0153" lineId="1 3 5" stationid="330" stationname="을지로3가">
                                 <rect x="712" y="272" width="16" height="6" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                                 <circle cx="715" cy="275" r="1.5" stroke="#052f93" stroke-width="1" fill="#052f93"></circle>
                                 <circle cx="720" cy="275" r="1.5" stroke="#de6d00" stroke-width="1" fill="#de6d00"></circle>
                                 <circle cx="725" cy="275" r="1.5" stroke="#a95094" stroke-width="1" fill="#a95094"></circle>
                             </g>
-                        <g class="marker M0321 L3 interchange M0423 L4" cx="775" cy="400" id="M0321" uid="0321" lineId="3 4" stationname="충무로">
+                        <g class="marker M0321 L3 interchange M0423 L4" cx="775" cy="400" id="M0321" uid="0321" lineId="3 4" stationid="331" stationname="충무로">
                             <rect x="772" y="397" width="11" height="6" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                             <circle cx="775" cy="400" r="1.5" stroke="#de6d00" stroke-width="1" fill="#de6d00"></circle>
                             <circle cx="780" cy="400" r="1.5" stroke="#0099d1" stroke-width="1" fill="#0099d1"></circle>
@@ -270,10 +273,10 @@
                         <circle class="accent A0321 A0423" cx="775" cy="400" r="3" id="A0321" stroke="black" stroke-width="1" fill="red"
                             uid="0321" lineId="3" style="display:none"></circle>
                         <circle class="marker M0322 L3" cx="810" cy="435" r="3" id="M0322" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="0322" lineId="3" stationname="동대입구"></circle>
+                            stroke-width="1" fill="#ffffff" uid="0322" lineId="3" stationid="332" stationname="동대입구"></circle>
                         <circle class="accent A0322" cx="810" cy="435" r="3" id="A0322" stroke="black" stroke-width="1" fill="red"
                             uid="0322" lineId="3" style="display:none"></circle>
-                        <g class="marker M0323 L3 interchange M2634 L6" cx="850" cy="475" id="M0323" uid="0323" lineId="3 6" stationname="약수">
+                        <g class="marker M0323 L3 interchange M2634 L6" cx="850" cy="475" id="M0323" uid="0323" lineId="3 6" stationid="333" stationname="약수">
                             <rect x="847" y="467" width="6" height="11" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                             <circle cx="850" cy="475" r="1.5" stroke="#de6d00" stroke-width="1" fill="#de6d00"></circle>
                             <circle cx="850" cy="470" r="1.5" stroke="#d08d1a" stroke-width="1" fill="#d08d1a"></circle>
@@ -281,10 +284,10 @@
                         <circle class="accent A0323 A2634" cx="850" cy="475" r="3" id="A0323" stroke="black" stroke-width="1" fill="red"
                             uid="0323" lineId="3" style="display:none"></circle>
                         <circle class="marker M0324 L3" cx="860" cy="500" r="3" id="M0324" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="0324" lineId="3" stationname="금호"></circle>
+                            stroke-width="1" fill="#ffffff" uid="0324" lineId="3" stationid="334" stationname="금호"></circle>
                         <circle class="accent A0324" cx="860" cy="500" r="3" id="A0324" stroke="black" stroke-width="1" fill="red"
                             uid="0324" lineId="3" style="display:none"></circle>
-                        <g class="marker M0325 L3 interchange M1011 LK" cx="860" cy="530" id="M0325" uid="0325" lineId="3 K" stationname="옥수">
+                        <g class="marker M0325 L3 interchange M1011 LK" cx="860" cy="530" id="M0325" uid="0325" lineId="3 K" stationid="335" stationname="옥수">
                             <rect x="857" y="527" width="6" height="11" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                             <circle cx="860" cy="535" r="1.5" stroke="#de6d00" stroke-width="1" fill="#de6d00"></circle>
                             <circle cx="860" cy="530" r="1.5" stroke="#5f9c82" stroke-width="1" fill="#5f9c82"></circle>
@@ -292,10 +295,10 @@
                         <circle class="accent A0325 A1011" cx="860" cy="530" r="3" id="A0325" stroke="black" stroke-width="1" fill="red"
                             uid="0325" lineId="3" style="display:none"></circle>
                         <circle class="marker M0326 L3" cx="860" cy="570" r="3" id="M0326" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="0326" lineId="3" stationname="압구정"></circle>
+                            stroke-width="1" fill="#ffffff" uid="0326" lineId="3" stationid="336" stationname="압구정"></circle>
                         <circle class="accent A0326" cx="860" cy="570" r="3" id="A0326" stroke="black" stroke-width="1" fill="red"
                             uid="0326" lineId="3" style="display:none"></circle>
-                        <g class="marker M0327 L3 interchange M4304 LS" cx="860" cy="590" id="M0327" uid="0327" lineId="3 S" stationname="신사">
+                        <g class="marker M0327 L3 interchange M4304 LS" cx="860" cy="590" id="M0327" uid="0327" lineId="3 S" stationid="337" stationname="신사">
                             <rect x="857" y="587" width="6" height="11" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                             <circle cx="860" cy="590" r="1.5" stroke="#de6d00" stroke-width="1" fill="#de6d00"></circle>
                             <circle cx="860" cy="595" r="1.5" stroke="#cd2234" stroke-width="1" fill="#cd2234"></circle>
@@ -303,10 +306,10 @@
                         <circle class="accent A0327 A4304" cx="860" cy="590" r="3" id="A0327" stroke="black" stroke-width="1" fill="red"
                             uid="0327" lineId="3" style="display:none"></circle>
                         <circle class="marker M0328 L3" cx="860" cy="610" r="3" id="M0328" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="0328" lineId="3" stationname="잠원"></circle>
+                            stroke-width="1" fill="#ffffff" uid="0328" lineId="3" stationid="338" stationname="잠원"></circle>
                         <circle class="accent A0328" cx="860" cy="610" r="3" id="A0328" stroke="black" stroke-width="1" fill="red"
                             uid="0328" lineId="3" style="display:none"></circle>
-                        <g class="marker M0329 L3 interchange M2736 L7 M4123 L9" cx="860" cy="645" id="M0329" uid="0329" lineId="3 7 9" stationname="고속터미널">
+                        <g class="marker M0329 L3 interchange M2736 L7 M4123 L9" cx="860" cy="645" id="M0329" uid="0329" lineId="3 7 9" stationid="339" stationname="고속터미널">
                             <rect x="857" y="632" width="6" height="16" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                             <circle cx="860" cy="635" r="1.5" stroke="#de6d00" stroke-width="1" fill="#de6d00"></circle>
                             <circle cx="860" cy="640" r="1.5" stroke="#657931" stroke-width="1" fill="#657931"></circle>
@@ -314,16 +317,16 @@
                         </g>
                         <circle class="accent A0329 A2736 A4123" cx="860" cy="645" r="3" id="A0329" stroke="black" stroke-width="1"
                             fill="red" uid="0329" lineId="3" style="display:none"></circle>
-                            <g class="marker M0223 L2 interchange M0330 L3" cx="860" cy="680" id="M0223" uid="0223" lineId="2 3" stationname="교대">
+                            <g class="marker M0223 L2 interchange M0330 L3" cx="860" cy="680" id="M0223" uid="0223" lineId="2 3" stationid="340" stationname="교대">
                                 <rect x="857" y="677" width="11" height="6" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                                 <circle cx="865" cy="680" r="1.5" stroke="#10a643" stroke-width="1" fill="#10a643"></circle>
                                 <circle cx="860" cy="680" r="1.5" stroke="#de6d00" stroke-width="1" fill="#de6d00"></circle>
                             </g>
                         <circle class="marker M0331 L3" cx="880" cy="700" r="3" id="M0331" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="0331" lineId="3" stationname="남부터미널"></circle>
+                            stroke-width="1" fill="#ffffff" uid="0331" lineId="3" stationid="341" stationname="남부터미널"></circle>
                         <circle class="accent A0331" cx="880" cy="700" r="3" id="A0331" stroke="black" stroke-width="1" fill="red"
                             uid="0331" lineId="3" style="display:none"></circle>
-                        <g class="marker M0332 L3 interchange M4308 LS" cx="920" cy="725" id="M0332" uid="0332" lineId="3 S" stationname="양재">
+                        <g class="marker M0332 L3 interchange M4308 LS" cx="920" cy="725" id="M0332" uid="0332" lineId="3 S" stationid="342" stationname="양재">
                             <rect x="917" y="722" width="6" height="11" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                             <circle cx="920" cy="725" r="1.5" stroke="#de6d00" stroke-width="1" fill="#de6d00"></circle>
                             <circle cx="920" cy="730" r="1.5" stroke="#cd2234" stroke-width="1" fill="#cd2234"></circle>
@@ -331,10 +334,10 @@
                         <circle class="accent A0332 A4308" cx="920" cy="725" r="3" id="A0332" stroke="black" stroke-width="1" fill="red"
                             uid="0332" lineId="3" style="display:none"></circle>
                         <circle class="marker M0333 L3" cx="960" cy="725" r="3" id="M0333" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="0333" lineId="3" stationname="매봉"></circle>
+                            stroke-width="1" fill="#ffffff" uid="0333" lineId="3" stationid="343" stationname="매봉"></circle>
                         <circle class="accent A0333" cx="960" cy="725" r="3" id="A0333" stroke="black" stroke-width="1" fill="red"
                             uid="0333" lineId="3" style="display:none"></circle>
-                        <g class="marker M0334 L3 interchange M1025 LB" cx="1015" cy="725" id="M0334" uid="0334" lineId="3 B" stationname="도곡">
+                        <g class="marker M0334 L3 interchange M1025 LB" cx="1015" cy="725" id="M0334" uid="0334" lineId="3 B" stationid="344" stationname="도곡">
                             <rect x="1012" y="722" width="6" height="11" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                             <circle cx="1015" cy="725" r="1.5" stroke="#de6d00" stroke-width="1" fill="#de6d00"></circle>
                             <circle cx="1015" cy="730" r="1.5" stroke="#a69500" stroke-width="1" fill="#a69500"></circle>
@@ -342,29 +345,29 @@
                         <circle class="accent A0334 A1025" cx="1015" cy="725" r="3" id="A0334" stroke="black" stroke-width="1"
                             fill="red" uid="0334" lineId="3" style="display:none"></circle>
                         <circle class="marker M0335 L3" cx="1065" cy="725" r="3" id="M0335" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="0335" lineId="3" stationname="대치"></circle>
+                            stroke-width="1" fill="#ffffff" uid="0335" lineId="3" stationid="345" stationname="대치"></circle>
                         <circle class="accent A0335" cx="1065" cy="725" r="3" id="A0335" stroke="black" stroke-width="1" fill="red"
                             uid="0335" lineId="3" style="display:none"></circle>
                         <circle class="marker M0336 L3" cx="1110" cy="725" r="3" id="M0336" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="0336" lineId="3" stationname="학여울"></circle>
+                            stroke-width="1" fill="#ffffff" uid="0336" lineId="3" stationid="346" stationname="학여울"></circle>
                         <circle class="accent A0336" cx="1110" cy="725" r="3" id="A0336" stroke="black" stroke-width="1" fill="red"
                             uid="0336" lineId="3" style="display:none"></circle>
                         <circle class="marker M0337 L3" cx="1175" cy="725" r="3" id="M0337" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="0337" lineId="3" stationname="대청"></circle>
+                            stroke-width="1" fill="#ffffff" uid="0337" lineId="3" stationid="347" stationname="대청"></circle>
                         <circle class="accent A0337" cx="1175" cy="725" r="3" id="A0337" stroke="black" stroke-width="1" fill="red"
                             uid="0337" lineId="3" style="display:none"></circle>
                         <circle class="marker M0338 L3" cx="1220" cy="725" r="3" id="M0338" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="0338" lineId="3" stationname="일원"></circle>
+                            stroke-width="1" fill="#ffffff" uid="0338" lineId="3" stationid="348" stationname="일원"></circle>
                         <circle class="accent A0338" cx="1220" cy="725" r="3" id="A0338" stroke="black" stroke-width="1" fill="red"
                             uid="0338" lineId="3" style="display:none"></circle>
-                        <g class="marker M0339 L3 interchange M1030 LB" cx="1285" cy="765" id="M0339" uid="0339" lineId="3 B" stationname="수서">
+                        <g class="marker M0339 L3 interchange M1030 LB" cx="1285" cy="765" id="M0339" uid="0339" lineId="3 B" stationid="349" stationname="수서">
                             <rect x="1282" y="762" width="11" height="6" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                             <circle cx="1285" cy="765" r="1.5" stroke="#de6d00" stroke-width="1" fill="#de6d00"></circle>
                             <circle cx="1290" cy="765" r="1.5" stroke="#a69500" stroke-width="1" fill="#a69500"></circle>
                         </g>
                         <circle class="accent A0339 A1030" cx="1285" cy="765" r="3" id="A0339" stroke="black" stroke-width="1"
                             fill="red" uid="0339" lineId="3" style="display:none"></circle>
-                        <g class="marker M0340 L3 interchange M2818 L8" cx="1332.5" cy="717.5" id="M2818" uid="2818" lineId="3 8" stationname="가락시장">
+                        <g class="marker M0340 L3 interchange M2818 L8" cx="1332.5" cy="717.5" id="M2818" uid="2818" lineId="3 8" stationid="350" stationname="가락시장">
                             <rect x="1329.5" y="709.5" width="6" height="11" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                             <circle cx="1332.5" cy="717.5" r="1.5" stroke="#de6d00" stroke-width="1" fill="#de6d00"></circle>
                             <circle cx="1332.5" cy="712.5" r="1.5" stroke="#e74e6d" stroke-width="1" fill="#e74e6d"></circle>
@@ -372,10 +375,10 @@
                         <circle class="accent A0340 A2818" cx="1332.5" cy="717.5" r="3" id="A2818" stroke="black" stroke-width="1"
                             fill="red" uid="2818" lineId="3" style="display:none"></circle>
                         <circle class="marker M0341 L3" cx="1375" cy="675" r="3" id="M0341" stroke="#de6d00"
-                            stroke-width="1" fill="#ffffff" uid="0341" lineId="3" stationname="경찰병원"></circle>
+                            stroke-width="1" fill="#ffffff" uid="0341" lineId="3" stationid="351" stationname="경찰병원"></circle>
                         <circle class="accent A0341" cx="1375" cy="675" r="3" id="A0341" stroke="black" stroke-width="1" fill="red"
                             uid="0341" lineId="3" style="display:none"></circle>
-                        <g class="marker M0342 L3 interchange M2558 L5" cx="1410" cy="640" id="M2558" uid="2558" lineId="3 5" stationname="오금">
+                        <g class="marker M0342 L3 interchange M2558 L5" cx="1410" cy="640" id="M2558" uid="2558" lineId="3 5" stationid="352" stationname="오금">
                             <rect x="1407" y="632" width="6" height="11" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                             <circle cx="1410" cy="640" r="1.5" stroke="#de6d00" stroke-width="1" fill="#de6d00"></circle>
                             <circle cx="1410" cy="635" r="1.5" stroke="#a95094" stroke-width="1" fill="#a95094"></circle>

@@ -1,12 +1,12 @@
 function train_loc_info(l_Number) {
   const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
   const url = `${PROXY}/test/test?number=${l_Number}`;
-  // livecongestion_info(l_Number, trainNo);
+  let hour_h= new Date().getHours();
   if (l_Number == 2 || l_Number == 3) {
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        if(data.status === 500) {
+        if(data.status === 500 || (hour_h >= 1 && hour_h < 5)) {
           if(confirm(`현재 ${l_Number}호선은 운행중이 아닙니다. 다시 시도하시겠습니까?`)) train_loc_info(l_Number);
         }
         else {
@@ -150,7 +150,7 @@ function train_loc_info(l_Number) {
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        if(data.status === 500) {
+        if(data.status === 500 || (hour_h >= 1 && hour_h < 5)) {
           if(confirm(`현재 ${l_Number}호선은 운행중이 아닙니다. 다시 시도하시겠습니까?`)) train_loc_info(l_Number);
         } else {
           const stations = data.realtimePositionList;

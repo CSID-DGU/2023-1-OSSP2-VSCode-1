@@ -8,6 +8,8 @@
     <script src="./zoomline.js"></script>
     <script src="./livetraininfo_api.js"></script>
     <script src="./livecongestion.js"></script>
+    <script src="./statisticcongestion.js"></script>
+    <script src="./stationid.js" defer></script>
     <script src="./trainID.js" defer></script>
     <script src="./drag.js"></script>
   </head>
@@ -29,6 +31,7 @@
             <tr><td>
             </td></tr>
           </table>
+          <p id="station_status"></p>
         </div>
       </div>
     </div>
@@ -389,6 +392,7 @@
                 id="M1007"
                 uid="1007"
                 lineId="1 2"
+                stationid="234"
                 stationname="신도림"
               >
                 <rect
@@ -437,6 +441,7 @@
                 id="M0156"
                 uid="0156"
                 lineId="1 2 W"
+                stationid="211-4"
                 stationname="신설동"
               >
                 <rect
@@ -493,6 +498,7 @@
                 id="M0200"
                 uid="0200"
                 lineId="2 5"
+                stationid="234-4"
                 stationname="까치산"
               >
                 <rect
@@ -545,6 +551,7 @@
                 fill="#ffffff"
                 uid="0249"
                 lineId="2"
+                stationid="234-3"
                 stationname="신정네거리"
               ></circle>
               <circle
@@ -571,6 +578,7 @@
                 fill="#ffffff"
                 uid="0248"
                 lineId="2"
+                stationid="234-2"
                 stationname="양천구청"
               ></circle>
               <circle
@@ -597,6 +605,7 @@
                 fill="#ffffff"
                 uid="0247"
                 lineId="2"
+                stationid="234-1"
                 stationname="도림천"
               ></circle>
               <circle
@@ -623,6 +632,7 @@
                 fill="#ffffff"
                 uid="0235"
                 lineId="2"
+                stationid="235"
                 stationname="문래"
               ></circle>
               <circle
@@ -645,6 +655,7 @@
                 id="M0236"
                 uid="0236"
                 lineId="2 5"
+                stationid="236"
                 stationname="영등포구청"
               >
                 <rect
@@ -693,6 +704,7 @@
                 id="M0237"
                 uid="0237"
                 lineId="2 9"
+                stationid="237"
                 stationname="당산"
               >
                 <rect
@@ -741,6 +753,7 @@
                 id="M0238"
                 uid="0238"
                 lineId="2 6"
+                stationid="238"
                 stationname="합정"
               >
                 <rect
@@ -789,6 +802,7 @@
                 id="M0239"
                 uid="0239"
                 lineId="2 K A"
+                stationid="239"
                 stationname="홍대입구"
               >
                 <rect
@@ -849,6 +863,7 @@
                 fill="#ffffff"
                 uid="0240"
                 lineId="2"
+                stationid="240"
                 stationname="신촌"
               ></circle>
               <circle
@@ -875,6 +890,7 @@
                 fill="#ffffff"
                 uid="0241"
                 lineId="2"
+                stationid="241"
                 stationname="이대"
               ></circle>
               <circle
@@ -901,6 +917,7 @@
                 fill="#ffffff"
                 uid="0242"
                 lineId="2"
+                stationid="242"
                 stationname="아현"
               ></circle>
               <circle
@@ -923,6 +940,7 @@
                 id="M0243"
                 uid="0243"
                 lineId="2 5"
+                stationid="243"
                 stationname="충정로"
               >
                 <rect
@@ -972,6 +990,7 @@
                 uid="0151"
                 lineId="1 2"
                 stationid="132"
+                stationid="201"
                 stationname="시청"
               >
                 <rect
@@ -1024,6 +1043,7 @@
                 fill="#ffffff"
                 uid="0202"
                 lineId="2"
+                stationid="202"
                 stationname="을지로입구"
               ></circle>
               <circle
@@ -1046,6 +1066,7 @@
                 id="M0203"
                 uid="0203"
                 lineId="2 3"
+                stationid="203"
                 stationname="을지로3가"
               >
                 <rect
@@ -1094,6 +1115,7 @@
                 id="M0204"
                 uid="0204"
                 lineId="2 5"
+                stationid="204"
                 stationname="을지로4가"
               >
                 <rect
@@ -1142,6 +1164,7 @@
                 id="M0205"
                 uid="0205"
                 lineId="2 4 5"
+                stationid="205"
                 stationname="동대문역사문화공원"
               >
                 <rect
@@ -1198,6 +1221,7 @@
                 id="M0206"
                 uid="0206"
                 lineId="2 6"
+                stationid="206"
                 stationname="신당"
               >
                 <rect
@@ -1250,6 +1274,7 @@
                 fill="#ffffff"
                 uid="0207"
                 lineId="2"
+                stationid="207"
                 stationname="상왕십리"
               ></circle>
               <circle
@@ -1272,6 +1297,7 @@
                 id="M0208"
                 uid="0208"
                 lineId="2 5 K B"
+                stationid="208"
                 stationname="왕십리"
               >
                 <rect
@@ -1340,6 +1366,7 @@
                 fill="#ffffff"
                 uid="0209"
                 lineId="2"
+                stationid="209"
                 stationname="한양대"
               ></circle>
               <circle
@@ -1366,6 +1393,7 @@
                 fill="#ffffff"
                 uid="0210"
                 lineId="2"
+                stationid="210"
                 stationname="뚝섬"
               ></circle>
               <circle
@@ -1388,6 +1416,7 @@
                 id="M0211"
                 uid="0211"
                 lineId="2"
+                stationid="211"
                 stationname="성수"
               >
                 <rect
@@ -1436,6 +1465,7 @@
                 id="M0212"
                 uid="0212"
                 lineId="2 7"
+                stationid="212"
                 stationname="건대입구"
               >
                 <rect
@@ -1488,6 +1518,7 @@
                 fill="#ffffff"
                 uid="0213"
                 lineId="2"
+                stationid="213"
                 stationname="구의"
               ></circle>
               <circle
@@ -1514,6 +1545,7 @@
                 fill="#ffffff"
                 uid="0214"
                 lineId="2"
+                stationid="214"
                 stationname="강변"
               ></circle>
               <circle
@@ -1540,6 +1572,7 @@
                 fill="#ffffff"
                 uid="0215"
                 lineId="2"
+                stationid="215"
                 stationname="잠실나루"
               ></circle>
               <circle
@@ -1562,6 +1595,7 @@
                 id="M0216"
                 uid="0216"
                 lineId="2 8"
+                stationid="216"
                 stationname="잠실"
               >
                 <rect
@@ -1614,6 +1648,7 @@
                 fill="#ffffff"
                 uid="0217"
                 lineId="2"
+                stationid="217"
                 stationname="잠실새내"
               ></circle>
               <circle
@@ -1636,6 +1671,7 @@
                 id="M0218"
                 uid="0218"
                 lineId="2 9"
+                stationid="218"
                 stationname="종합운동장"
               >
                 <rect
@@ -1688,6 +1724,7 @@
                 fill="#ffffff"
                 uid="0219"
                 lineId="2"
+                stationid="219"
                 stationname="삼성"
               ></circle>
               <circle
@@ -1710,6 +1747,7 @@
                 id="M0220"
                 uid="0220"
                 lineId="2 B"
+                stationid="220"
                 stationname="선릉"
               >
                 <rect
@@ -1762,6 +1800,7 @@
                 fill="#ffffff"
                 uid="0221"
                 lineId="2"
+                stationid="221"
                 stationname="역삼"
               ></circle>
               <circle
@@ -1784,6 +1823,7 @@
                 id="M0222"
                 uid="0222"
                 lineId="2 S"
+                stationid="222"
                 stationname="강남"
               >
                 <rect
@@ -1832,6 +1872,7 @@
                 id="M0223"
                 uid="0223"
                 lineId="2 3"
+                stationid="223"
                 stationname="교대"
               >
                 <rect
@@ -1884,6 +1925,7 @@
                 fill="#ffffff"
                 uid="0224"
                 lineId="2"
+                stationid="224"
                 stationname="서초"
               ></circle>
               <circle
@@ -1910,6 +1952,7 @@
                 fill="#ffffff"
                 uid="0225"
                 lineId="2"
+                stationid="225"
                 stationname="방배"
               ></circle>
               <circle
@@ -1932,6 +1975,7 @@
                 id="M0226"
                 uid="0226"
                 lineId="2 4"
+                stationid="226"
                 stationname="사당"
               >
                 <rect
@@ -1984,6 +2028,7 @@
                 fill="#ffffff"
                 uid="0227"
                 lineId="2"
+                stationid="227"
                 stationname="낙성대"
               ></circle>
               <circle
@@ -2010,6 +2055,7 @@
                 fill="#ffffff"
                 uid="0228"
                 lineId="2"
+                stationid="228"
                 stationname="서울대입구"
               ></circle>
               <circle
@@ -2036,6 +2082,7 @@
                 fill="#ffffff"
                 uid="0229"
                 lineId="2"
+                stationid="229"
                 stationname="봉천"
               ></circle>
               <circle
@@ -2058,6 +2105,7 @@
                 id="M0230"
                 uid="0230"
                 lineId="2 SL"
+                stationid="230"
                 stationname="신림"
               >
                 <rect
@@ -2110,6 +2158,7 @@
                 fill="#ffffff"
                 uid="0231"
                 lineId="2"
+                stationid="231"
                 stationname="신대방"
               ></circle>
               <circle
@@ -2136,6 +2185,7 @@
                 fill="#ffffff"
                 uid="0232"
                 lineId="2"
+                stationid="232"
                 stationname="구로디지털단지"
               ></circle>
               <circle
@@ -2158,6 +2208,7 @@
                 id="M0233"
                 uid="0233"
                 lineId="2 7"
+                stationid="233"
                 stationname="대림"
               >
                 <rect
@@ -2210,6 +2261,7 @@
                 fill="#ffffff"
                 uid="0244"
                 lineId="2"
+                stationid="211-1"
                 stationname="용답"
               ></circle>
               <circle
@@ -2236,6 +2288,7 @@
                 fill="#ffffff"
                 uid="0245"
                 lineId="2"
+                stationid="211-2"
                 stationname="신답"
               ></circle>
               <circle
@@ -2262,6 +2315,7 @@
                 fill="#ffffff"
                 uid="0250"
                 lineId="2"
+                stationid="211-3"
                 stationname="용두"
               ></circle>
               <circle

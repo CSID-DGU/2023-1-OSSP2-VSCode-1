@@ -18,6 +18,7 @@ function updateCongestion(congestionCar, congestionTrain, dom) {
   carTable.empty(); // Clears the table if it was previously filled
 
   var row = $("<tr>");
+  var counter = 1; // number counting
   $.each(congestionCar, function(index, value) {
       var color = "#C5E0B4"; // default color
       if (value > 34 && value <= 99) {
@@ -27,7 +28,10 @@ function updateCongestion(congestionCar, congestionTrain, dom) {
       } else if (value > 150) {
           color = "#FF0000";
       }
-      row.append($("<td>").css({"background-color": color, "width": "30px", "height": "30px"}));
+      //number display in center
+      var numberSpan = $("<span>").text(counter).css({"display": "flex","align-items": "center","justify-content":"center"});
+      row.append($("<td>").css({"background-color": color, "width": "30px", "height": "30px"}).append(numberSpan));
+      counter++;
   });
   carTable.html(row);
   carTable.css({
@@ -44,7 +48,7 @@ function updateCongestion(congestionCar, congestionTrain, dom) {
       } else if (congestionTrain > 100 && congestionTrain <= 150) {
         congestionTrain = '혼잡';
       } else if (congestionTrain > 150) {
-        congestionTrain = '혼잡';
+        congestionTrain = '매우 혼잡';
       } else {
         congestionTrain = '쾌적';
       }
@@ -58,7 +62,7 @@ function updateCongestion(congestionCar, congestionTrain, dom) {
     trainSttusTerm = '출발';
   }
   console.log(dom);
-  let trainInfo = $("<tr>").text("운행정보: " + (dom.attr('updnLine') == 0 ? '상행' : '하행'));
+  let trainInfo = $("<tr>").text("운행정보: " + (dom.attr('updnLine') == 0 ? '상행/내선' : '하행/외선'));
   let trainStatus = $("<tr>").text("현재 열차 상태: " + trainSttusTerm);
   let trainLocation = $("<tr>").text("열차 위치: " + dom.attr('statnNm') + '역');
   let trainCongestion = $("<tr>").text("열차전체혼잡도: " + congestionTrain);
