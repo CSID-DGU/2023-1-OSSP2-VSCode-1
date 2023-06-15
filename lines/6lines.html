@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="./roadMapStyle.css" />
     <title>지하철 혼잡도 알리미</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./zoom.js"></script>
+    <script src="./zoomline.js"></script>
     <script src="./livetraininfo_api.js"></script>
     <script src="./statisticcongestion.js"></script>
     <!-- <script src="./trainID.js" defer></script> -->
     <script src="./stationid.js" defer></script>
+    <script src="./drag.js"></script>
 </head>
 
 <body>
@@ -58,7 +59,7 @@
             </div>
 
             <!-- 줌 IN / OUT -->
-            <div class="zoom">
+            <div class="zoomline">
                 <button id="zoomInBtn">
                     +
                 </button>
@@ -70,7 +71,7 @@
             <!-- 지하철 노선도 -->
             <div class="train-line">
                 <svg id="trainLine" xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true" viewBox="0 0 1525 1000"
-             style="position: absolute; z-index: 1000; transform-origin: 0px 0px 0px; backface-visibility: hidden; width: 1290.2px; height: 846px; transform: scale(1.4) scaleZ(1); transition-timing-function: ease; cursor: default;">
+             style="position: absolute; z-index: 1000; transform-origin: 0px 0px 0px; backface-visibility: hidden; width: 1290.2px; height: 846px; transform: scale(2) scaleZ(1); transition-timing-function: ease; cursor: default;">
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 2440 1600" width="100%">
                 <path d="M 65 305 H 370 V 430 H 500 L 850 780 H 940 V 888 H 1480 L 1560 808 H 1830 L 1910 888 H 2010 L 2090 808 V 620 H 2300 M 940 860 H 850 L 730 740 H 800"
                       fill="none" stroke="#d3effb" stroke-width="23" stroke-linejoin="round" stroke-linecap="round"></path>
@@ -131,7 +132,7 @@
             <!-- 역(동그라미)나타나는 곳 -->
             <g class="marker-group" transform-origin="50% 50% 0">
                 <!-- 1호선:소요산역부터 시작 -->
-                <g class="marker M2649 L6 interchange M1311 LG" cx="1260" cy="255" id="M1311" uid="1311" lineId="6 G" stationid="648">
+                <g class="marker M2649 L6 interchange M1311 LG" cx="1260" cy="255" id="M1311" uid="1311" lineId="6 G" stationid="648" stationname="신내">
                     <rect x="1257" y="252" width="6" height="11" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                     <circle cx="1260" cy="255" r="1.5" stroke="#d08d1a" stroke-width="1" fill="#d08d1a"></circle>
                     <circle cx="1260" cy="260" r="1.5" stroke="#0ba382" stroke-width="1" fill="#0ba382"></circle>
@@ -139,14 +140,14 @@
                 <circle class="accent A2649 A1311" cx="1260" cy="255" r="3" id="A1311" stroke="black" stroke-width="1"
                         fill="red" uid="1311" lineId="6" style="display:none"></circle>
                 <circle class="marker M2648 L6" cx="1245" cy="240" r="3" id="M2648" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2648" lineId="6" stationid="647"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2648" lineId="6" stationid="647" stationname="봉화산"></circle>
                 <circle class="accent A2648" cx="1245" cy="240" r="3" id="A2648" stroke="black" stroke-width="1" fill="red"
                         uid="2648" lineId="6" style="display:none"></circle>
                 <circle class="marker M2647 L6" cx="1195" cy="225" r="3" id="M2647" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2647" lineId="6" stationid="646"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2647" lineId="6" stationid="646" stationname="화랑대"></circle>
                 <circle class="accent A2647" cx="1195" cy="225" r="3" id="A2647" stroke="black" stroke-width="1" fill="red"
                         uid="2647" lineId="6" style="display:none"></circle>
-                <g class="marker M2646 L6 interchange M2719 L7" cx="1165" cy="225" id="M2646" uid="2646" lineId="6 7" stationid="645">
+                <g class="marker M2646 L6 interchange M2719 L7" cx="1165" cy="225" id="M2646" uid="2646" lineId="6 7" stationid="645" stationname="태릉입구">
                     <rect x="1157" y="222" width="11" height="6" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                     <circle cx="1160" cy="225" r="1.5" stroke="#d08d1a" stroke-width="1" fill="#d08d1a"></circle>
                     <circle cx="1165" cy="225" r="1.5" stroke="#657931" stroke-width="1" fill="#657931"></circle>
@@ -154,26 +155,26 @@
                 <circle class="accent A2646 A2719" cx="1165" cy="225" r="3" id="A2646" stroke="black" stroke-width="1"
                         fill="red" uid="2646" lineId="6" style="display:none"></circle>
                 <circle class="marker M2644 L6" cx="1045" cy="225" r="3" id="M2644" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2644" lineId="6" stationid="643"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2644" lineId="6" stationid="643" stationname="돌곶이"></circle>
                 <circle class="accent A2644" cx="1045" cy="225" r="3" id="A2644" stroke="black" stroke-width="1" fill="red"
                         uid="2644" lineId="6" style="display:none"></circle>
                 <circle class="marker M2643 L6" cx="1010" cy="225" r="3" id="M2643" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2643" lineId="6" stationid="642"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2643" lineId="6" stationid="642" stationname="상월곡"></circle>
                 <circle class="accent A2643" cx="1010" cy="225" r="3" id="A2643" stroke="black" stroke-width="1" fill="red"
                         uid="2643" lineId="6" style="display:none"></circle>
                 <circle class="marker M2642 L6" cx="970" cy="225" r="3" id="M2642" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2642" lineId="6" stationid="641"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2642" lineId="6" stationid="641" stationname="월곡"></circle>
                 <circle class="accent A2642" cx="970" cy="225" r="3" id="A2642" stroke="black" stroke-width="1" fill="red"
                         uid="2642" lineId="6" style="display:none"></circle>
                 <circle class="marker M2641 L6" cx="940" cy="225" r="3" id="M2641" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2641" lineId="6" stationid="640"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2641" lineId="6" stationid="640" stationname="고려대"></circle>
                 <circle class="accent A2641" cx="940" cy="225" r="3" id="A2641" stroke="black" stroke-width="1" fill="red"
                         uid="2641" lineId="6" style="display:none"></circle>
                 <circle class="marker M2640 L6" cx="905" cy="225" r="3" id="M2640" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2640" lineId="6" stationid="639"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2640" lineId="6" stationid="639" stationname="안암"></circle>
                 <circle class="accent A2640" cx="905" cy="225" r="3" id="A2640" stroke="black" stroke-width="1" fill="red"
                         uid="2640" lineId="6" style="display:none"></circle>
-                <g class="marker M2639 L6 interchange M4712 LW" cx="900" cy="240" id="M2639" uid="2639" lineId="6 W" stationid="638">
+                <g class="marker M2639 L6 interchange M4712 LW" cx="900" cy="240" id="M2639" uid="2639" lineId="6 W" stationid="638" stationname="보문">
                     <rect x="897" y="232" width="6" height="11" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                     <circle cx="900" cy="240" r="1.5" stroke="#d08d1a" stroke-width="1" fill="#d08d1a"></circle>
                     <circle cx="900" cy="235" r="1.5" stroke="#878787" stroke-width="1" fill="#878787"></circle>
@@ -181,26 +182,26 @@
                 <circle class="accent A2639 A4712" cx="900" cy="240" r="3" id="A2639" stroke="black" stroke-width="1" fill="red"
                         uid="2639" lineId="6" style="display:none"></circle>
                 <circle class="marker M2638 L6" cx="900" cy="255" r="3" id="M2638" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2638" lineId="6" stationid="637"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2638" lineId="6" stationid="637" stationname="창신"></circle>
                 <circle class="accent A2638" cx="900" cy="255" r="3" id="A2638" stroke="black" stroke-width="1" fill="red"
                         uid="2638" lineId="6" style="display:none"></circle>
                 <circle class="marker M2633 L6" cx="825" cy="475" r="3" id="M2633" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2633" lineId="6" stationid="632"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2633" lineId="6" stationid="632" stationname="버티고개"></circle>
                 <circle class="accent A2633" cx="825" cy="475" r="3" id="A2633" stroke="black" stroke-width="1" fill="red"
                         uid="2633" lineId="6" style="display:none"></circle>
                 <circle class="marker M2632 L6" cx="795" cy="475" r="3" id="M2632" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2632" lineId="6" stationid="631"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2632" lineId="6" stationid="631" stationname="한강진"></circle>
                 <circle class="accent A2632" cx="795" cy="475" r="3" id="A2632" stroke="black" stroke-width="1" fill="red"
                         uid="2632" lineId="6" style="display:none"></circle>
                 <circle class="marker M2631 L6" cx="755" cy="475" r="3" id="M2631" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2631" lineId="6" stationid="630"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2631" lineId="6" stationid="630" stationname="이태원"></circle>
                 <circle class="accent A2631" cx="755" cy="475" r="3" id="A2631" stroke="black" stroke-width="1" fill="red"
                         uid="2631" lineId="6" style="display:none"></circle>
                 <circle class="marker M2630 L6" cx="725" cy="475" r="3" id="M2630" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2630" lineId="6" stationid="629"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2630" lineId="6" stationid="629" stationname="녹사평"></circle>
                 <circle class="accent A2630" cx="725" cy="475" r="3" id="A2630" stroke="black" stroke-width="1" fill="red"
                         uid="2630" lineId="6" style="display:none"></circle>
-                <g class="marker M2628 L6 interchange M1261 LK" cx="635" cy="470" id="M2628" uid="2628" lineId="6 K" stationid="627">
+                <g class="marker M2628 L6 interchange M1261 LK" cx="635" cy="470" id="M2628" uid="2628" lineId="6 K" stationid="627" stationname="효창공원앞">
                     <rect x="632" y="467" width="6" height="11" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                     <circle cx="635" cy="475" r="1.5" stroke="#d08d1a" stroke-width="1" fill="#d08d1a"></circle>
                     <circle cx="635" cy="470" r="1.5" stroke="#5f9c82" stroke-width="1" fill="#5f9c82"></circle>
@@ -208,30 +209,30 @@
                 <circle class="accent A2628 A1261" cx="635" cy="470" r="3" id="A2628" stroke="black" stroke-width="1" fill="red"
                         uid="2628" lineId="6" style="display:none"></circle>
                 <circle class="marker M2626 L6" cx="580" cy="475" r="3" id="M2626" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2626" lineId="6" stationid="625"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2626" lineId="6" stationid="625" stationname="대흥"></circle>
                 <circle class="accent A2626" cx="580" cy="475" r="3" id="A2626" stroke="black" stroke-width="1" fill="red"
                         uid="2626" lineId="6" style="display:none"></circle>
                 <circle class="marker M2625 L6" cx="545" cy="475" r="3" id="M2625" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2625" lineId="6" stationid="624"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2625" lineId="6" stationid="624" stationname="광흥창"></circle>
                 <circle class="accent A2625" cx="545" cy="475" r="3" id="A2625" stroke="black" stroke-width="1" fill="red"
                         uid="2625" lineId="6" style="display:none"></circle>
                 <circle class="marker M2624 L6" cx="525" cy="460" r="3" id="M2624" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2624" lineId="6" stationid="623"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2624" lineId="6" stationid="623" stationname="상수"></circle>
                 <circle class="accent A2624" cx="525" cy="460" r="3" id="A2624" stroke="black" stroke-width="1" fill="red"
                         uid="2624" lineId="6" style="display:none"></circle>
                 <circle class="marker M2622 L6" cx="485" cy="420" r="3" id="M2622" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2622" lineId="6" stationid="621"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2622" lineId="6" stationid="621" stationname="망원"></circle>
                 <circle class="accent A2622" cx="485" cy="420" r="3" id="A2622" stroke="black" stroke-width="1" fill="red"
                         uid="2622" lineId="6" style="display:none"></circle>
                 <circle class="marker M2621 L6" cx="470" cy="375" r="3" id="M2621" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2621" lineId="6" stationid="620"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2621" lineId="6" stationid="620" stationname="마포구청"></circle>
                 <circle class="accent A2621" cx="470" cy="375" r="3" id="A2621" stroke="black" stroke-width="1" fill="red"
                         uid="2621" lineId="6" style="display:none"></circle>
                 <circle class="marker M2620 L6" cx="470" cy="350" r="3" id="M2620" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2620" lineId="6" stationid="619"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2620" lineId="6" stationid="619" stationname="월드컵경기장"></circle>
                 <circle class="accent A2620" cx="470" cy="350" r="3" id="A2620" stroke="black" stroke-width="1" fill="red"
                         uid="2620" lineId="6" style="display:none"></circle>
-                <g class="marker M2619 L6 interchange M1266 LK M4204 LA" cx="470" cy="310" id="M2619" uid="2619" lineId="6 K A" stationid="618">
+                <g class="marker M2619 L6 interchange M1266 LK M4204 LA" cx="470" cy="310" id="M2619" uid="2619" lineId="6 K A" stationid="618" stationname="디지털미디어시티">
                     <rect x="467" y="307" width="6" height="16" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                     <circle cx="470" cy="310" r="1.5" stroke="#d08d1a" stroke-width="1" fill="#d08d1a"></circle>
                     <circle cx="470" cy="315" r="1.5" stroke="#5f9c82" stroke-width="1" fill="#5f9c82"></circle>
@@ -240,79 +241,79 @@
                 <circle class="accent A2619 A1266 A4204" cx="470" cy="310" r="3" id="A2619" stroke="black" stroke-width="1"
                         fill="red" uid="2619" lineId="6" style="display:none"></circle>
                 <circle class="marker M2618 L6" cx="470" cy="280" r="3" id="M2618" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2618" lineId="6" stationid="617"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2618" lineId="6" stationid="617" stationname="증산"></circle>
                 <circle class="accent A2618" cx="470" cy="280" r="3" id="A2618" stroke="black" stroke-width="1" fill="red"
                         uid="2618" lineId="6" style="display:none"></circle>
                 <circle class="marker M2617 L6" cx="470" cy="250" r="3" id="M2617" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2617" lineId="6" stationid="616"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2617" lineId="6" stationid="616" stationname="새절"></circle>
                 <circle class="accent A2617" cx="470" cy="250" r="3" id="A2617" stroke="black" stroke-width="1" fill="red"
                         uid="2617" lineId="6" style="display:none"></circle>
                 <circle class="marker M2611 L6" cx="470" cy="205" r="3" id="M2611" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2611" lineId="6" stationid="610"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2611" lineId="6" stationid="610" stationname="응암"></circle>
                 <circle class="accent A2611" cx="470" cy="205" r="3" id="A2611" stroke="black" stroke-width="1" fill="red"
                         uid="2611" lineId="6" style="display:none"></circle>
                 <circle class="marker M2612 L6" cx="485" cy="190" r="3" id="M2612" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2612" lineId="6" stationid="611"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2612" lineId="6" stationid="611" stationname="역촌"></circle>
                 <circle class="accent A2612" cx="485" cy="190" r="3" id="A2612" stroke="black" stroke-width="1" fill="red"
                         uid="2612" lineId="6" style="display:none"></circle>
                 <circle class="marker M2614 L6" cx="470" cy="145" r="3" id="M2614" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2614" lineId="6" stationid="613"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2614" lineId="6" stationid="613" stationname="독바위"></circle>
                 <circle class="accent A2614" cx="470" cy="145" r="3" id="A2614" stroke="black" stroke-width="1" fill="red"
                         uid="2614" lineId="6" style="display:none"></circle>
                 <circle class="marker M2616 L6" cx="455" cy="190" r="3" id="M2616" stroke="#d08d1a"
-                        stroke-width="1" fill="#ffffff" uid="2616" lineId="6" stationid="615"></circle>
+                        stroke-width="1" fill="#ffffff" uid="2616" lineId="6" stationid="615" stationname="구산"></circle>
                 <circle class="accent A2616" cx="455" cy="190" r="3" id="A2616" stroke="black" stroke-width="1" fill="red"
                         uid="2616" lineId="6" style="display:none"></circle>
             </g>
-            <g class="marker M0311 L3 interchange M2615 L6" cx="440" cy="175" id="M0311" uid="0311" lineId="3 6" stationid="614">
+            <g class="marker M0311 L3 interchange M2615 L6" cx="440" cy="175" id="M0311" uid="0311" lineId="3 6" stationid="614" stationname="연신내">
                 <rect x="437" y="172" width="11" height="6" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                 <circle cx="445" cy="175" r="1.5" stroke="#de6d00" stroke-width="1" fill="#de6d00"></circle>
                 <circle cx="440" cy="175" r="1.5" stroke="#d08d1a" stroke-width="1" fill="#d08d1a"></circle>
             </g>
-            <g class="marker M0312 L3 interchange M2613 L6" cx="500" cy="175" id="M0312" uid="0312" lineId="3 6" stationid="612">
+            <g class="marker M0312 L3 interchange M2613 L6" cx="500" cy="175" id="M0312" uid="0312" lineId="3 6" stationid="612" stationname="불광">
                 <rect x="492" y="172" width="11" height="6" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                 <circle cx="495" cy="175" r="1.5" stroke="#de6d00" stroke-width="1" fill="#de6d00"></circle>
                 <circle cx="500" cy="175" r="1.5" stroke="#d08d1a" stroke-width="1" fill="#d08d1a"></circle>
             </g>
-            <g class="marker M0238 L2 interchange M2623 L6" cx="510" cy="445" id="M0238" uid="0238" lineId="2 6" stationid="622">
+            <g class="marker M0238 L2 interchange M2623 L6" cx="510" cy="445" id="M0238" uid="0238" lineId="2 6" stationid="622" stationname="합정">
                 <rect x="502" y="442" width="11" height="6" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                 <circle cx="505" cy="445" r="1.5" stroke="#10a643" stroke-width="1" fill="#10a643"></circle>
                 <circle cx="510" cy="445" r="1.5" stroke="#d08d1a" stroke-width="1" fill="#d08d1a"></circle>
             </g>
             <g class="marker M2530 L5 interchange M2627 L6 M1262 LK M4202 LA" cx="605" cy="460" id="M2530" uid="2530"
-                   lineId="5 6 K A" stationid="626">
+                   lineId="5 6 K A" stationid="626" stationname="공덕">
                     <rect x="602" y="457" width="6" height="21" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                     <circle cx="605" cy="465" r="1.5" stroke="#a95094" stroke-width="1" fill="#a95094"></circle>
                     <circle cx="605" cy="475" r="1.5" stroke="#d08d1a" stroke-width="1" fill="#d08d1a"></circle>
                     <circle cx="605" cy="470" r="1.5" stroke="#5f9c82" stroke-width="1" fill="#5f9c82"></circle>
                     <circle cx="605" cy="460" r="1.5" stroke="#038fa0" stroke-width="1" fill="#038fa0"></circle>
                 </g>
-                <g class="marker M0428 L4 interchange M2629 L6" cx="705" cy="475" id="M0428" uid="0428" lineId="4 6" stationid="628">
+                <g class="marker M0428 L4 interchange M2629 L6" cx="705" cy="475" id="M0428" uid="0428" lineId="4 6" stationid="628" stationname="삼각지">
                     <rect x="697" y="472" width="11" height="6" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                     <circle cx="705" cy="475" r="1.5" stroke="#0099d1" stroke-width="1" fill="#0099d1"></circle>
                     <circle cx="700" cy="475" r="1.5" stroke="#d08d1a" stroke-width="1" fill="#d08d1a"></circle>
                 </g>
-                <g class="marker M0323 L3 interchange M2634 L6" cx="850" cy="475" id="M0323" uid="0323" lineId="3 6" stationid="633">
+                <g class="marker M0323 L3 interchange M2634 L6" cx="850" cy="475" id="M0323" uid="0323" lineId="3 6" stationid="633" stationname="약수">
                     <rect x="847" y="467" width="6" height="11" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                     <circle cx="850" cy="475" r="1.5" stroke="#de6d00" stroke-width="1" fill="#de6d00"></circle>
                     <circle cx="850" cy="470" r="1.5" stroke="#d08d1a" stroke-width="1" fill="#d08d1a"></circle>
                 </g>
-                <g class="marker M2538 L5 interchange M2635 L6" cx="850" cy="395" id="M2538" uid="2538" lineId="5 6" stationid="634">
+                <g class="marker M2538 L5 interchange M2635 L6" cx="850" cy="395" id="M2538" uid="2538" lineId="5 6" stationid="634" stationname="청구">
                     <rect x="847" y="387" width="6" height="11" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                     <circle cx="850" cy="390" r="1.5" stroke="#a95094" stroke-width="1" fill="#a95094"></circle>
                     <circle cx="850" cy="395" r="1.5" stroke="#d08d1a" stroke-width="1" fill="#d08d1a"></circle>
                 </g>
-                <g class="marker M0206 L2 interchange M2636 L6" cx="900" cy="345" id="M0206" uid="0206" lineId="2 6" stationid="635">
+                <g class="marker M0206 L2 interchange M2636 L6" cx="900" cy="345" id="M0206" uid="0206" lineId="2 6" stationid="635" stationname="신당">
                     <rect x="892" y="342" width="11" height="6" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                     <circle cx="895" cy="345" r="1.5" stroke="#10a643" stroke-width="1" fill="#10a643"></circle>
                     <circle cx="900" cy="345" r="1.5" stroke="#d08d1a" stroke-width="1" fill="#d08d1a"></circle>
                 </g>
-                <g class="marker M0159 L1 interchange M2637 L6" cx="900" cy="275" id="M0159" uid="0159" lineId="1 6" stationid="636">
+                <g class="marker M0159 L1 interchange M2637 L6" cx="900" cy="275" id="M0159" uid="0159" lineId="1 6" stationid="636" stationname="동묘앞">
                     <rect x="897" y="267" width="6" height="11" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                     <circle cx="900" cy="275" r="1.5" stroke="#052f93" stroke-width="1" fill="#052f93"></circle>
                     <circle cx="900" cy="270" r="1.5" stroke="#d08d1a" stroke-width="1" fill="#d08d1a"></circle>
                 </g>
-                <g class="marker M1018 L1 interchange M2645 L6" cx="1070" cy="225" id="M1018" uid="1018" lineId="1 6" stationid="644">
+                <g class="marker M1018 L1 interchange M2645 L6" cx="1070" cy="225" id="M1018" uid="1018" lineId="1 6" stationid="644" stationname="석계">
                     <rect x="1067" y="222" width="11" height="6" stroke="black" stroke-width="1" fill="#ffffff"></rect>
                     <circle cx="1070" cy="225" r="1.5" stroke="#052f93" stroke-width="1" fill="#052f93"></circle>
                     <circle cx="1075" cy="225" r="1.5" stroke="#d08d1a" stroke-width="1" fill="#d08d1a"></circle>

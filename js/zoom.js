@@ -1,19 +1,24 @@
 $(document).ready(function() {
     var scale = 1;
-
+  
     $('#zoomInBtn').click(function() {
+        scale += 1;
         console.log(scale);
-        scale += 0.5;
         $('#trainLine').css('transform', 'scale(' + scale + ')');
     });
 
     $('#zoomOutBtn').click(function() {
-        console.log(scale);
         if(scale !== 1){
-            scale -= 0.5;
+            scale -= 1;
+            console.log(scale);
+        }
+        else {
+            console.log(scale);
         }
         $('#trainLine').css('transform', 'scale(' + scale + ')');
+        
     });
-
 });
+
+
 
