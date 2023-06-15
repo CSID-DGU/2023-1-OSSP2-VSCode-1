@@ -7,6 +7,7 @@
     <title>지하철 혼잡도 알리미</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./zoomline.js"></script>
+    <script src="./livecongestion.js"></script>
     <script src="./livetraininfo_api.js"></script>
     <script src="./trainID.js" defer></script>
     <script src="./drag.js"></script>
@@ -14,8 +15,29 @@
 
 <body>
     <script>
-        train_loc_info('3');
-    </script>
+        const subwayLineNumber = 3;
+        train_loc_info(subwayLineNumber);
+      </script>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <div id="title" style="position: relative; background-color: lightblue; color: white; height: 20%; display: flex; align-items: center; justify-content: center;">
+            <span class="close" style="position: absolute; right: 10px;">&times;</span>
+            <p id="modal_title">Some text in the Modal..</p>
+          </div>
+          <div id="content" style="height: 80%;">
+            <table id="carTable">
+
+            </table>
+            <table id="trainTable">
+              <tr>
+                <td>
+                
+              </td>
+            </tr>
+            </table>
+          </div>
+        </div>
+      </div>
     <div class="container">
         <!-- 로고 -->
         <div>
